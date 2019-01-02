@@ -18,6 +18,14 @@ class Arduino extends Component{
     return(
   
 <div>
+
+<div class="page-border" data-wow-duration="0.7s" data-wow-delay="0.2s">
+    <div class="top-border wow fadeInDown animated" ></div>
+    <div class="right-border wow fadeInRight animated" ></div>
+    <div class="bottom-border wow fadeInUp animated" ></div>
+    <div class="left-border wow fadeInLeft animated" ></div>
+</div>
+
 <Nav />
 <br></br><br></br><br></br><br></br><br></br>
 <div class="section-heading">

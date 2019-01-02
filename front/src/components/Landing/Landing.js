@@ -83,7 +83,7 @@ class Landing extends Component{
                         </ul>
                     </aside>
 
-             <Nav />
+             <Nav/>
 
                 </div>
             </div>
