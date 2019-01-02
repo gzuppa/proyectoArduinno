@@ -20,6 +20,7 @@ import Resident from '../../images/re1.jpg';
 import Megaman from '../../images/megaman.jpg';
 import Space from '../../images/space.png';
 import Mortal from '../../images/mk.png';
+import vintageRobot from '../../images/vintagerobot.jpg';
 
 
 
@@ -34,11 +35,8 @@ class Landing extends Component{
 
   render(){
     return(
-
-    
+  
 <div>
-
-
 <div class="page-border" data-wow-duration="0.7s" data-wow-delay="0.2s">
     <div class="top-border wow fadeInDown animated" ></div>
     <div class="right-border wow fadeInRight animated" ></div>
@@ -53,16 +51,13 @@ class Landing extends Component{
             <div class="row clearfix">
                 <div class="col-1">
 
-                    
                 <div id="logo">
                 <img src={Logo} id="banner-logo" alt="Landing Page"/>
                 <img src={Logo} id="navigation-logo" alt="Landing Page"/>  
                 </div>
-                  
-
+                
                     <aside>
 
-                        
                         <ul class="social-icons">
                             <li>
                                 <a title="Facebook" href="https://www.facebook.com/gus.zuppa">
@@ -85,11 +80,8 @@ class Landing extends Component{
                                 </a>
                             </li>
                         </ul>
-                       
-
                     </aside>
 
-                    
                     <nav id="nav-main">
                         <ul>
                             <li>
@@ -111,24 +103,19 @@ class Landing extends Component{
                                 <a href="#clients">Tienda</a>
                             </li>
                             <li>
-                                <a href="#pricing">Acerca de nosotros</a>
+                                <a href="#pricing"><strong>Login</strong></a>
                             </li>
                         </ul>
                     </nav>
-                   
 
                     <div id="nav-trigger"><span></span></div>
                     <nav id="nav-mobile"></nav>
-
                 </div>
             </div>
         </div>
-
         
         <div id="banner-content" class="row clearfix">
-
             <div class="col-38">
-
                 <div class="section-heading">
                     <h1>PROGRAMAR UN ROBOT ES SUPER DIVERTIDO</h1>
                     <h2>En RoboKids aprenderás a programar tus primeros robots, a comprender el código,
@@ -136,88 +123,76 @@ class Landing extends Component{
                     </h2>
                 </div>
 
-               
                 <a href="#" class="button">¡COMIENZA AHORA!</a>
-                
-
             </div>
-
         </div>
     </header>
-
-    
+ 
     <main id="content">
         <section id="about" class="introduction scrollto">
             <div class="row clearfix">
                 <div class="col-3">
                     <div class="section-heading">
                         <h3>¿Y COMO EMPIEZO?</h3>
-                        <h2 class="section-title">How We Help You To Sell Your Product</h2>
-                        <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam!</p>
+                        <h2 class="section-title">No es difícil programar un robot... con paciencia.</h2>
+                        <p class="section-subtitle">En RoboKids estamos fascinados con las placas Arduino por su gran capacidad 
+                        para programar miles de cosas, todo lo que puedas imaginar. Pero vamos paso a paso.</p>
                     </div>
                 </div>
 
                 <div class="col-2-3">
                     <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.1s">
                         <div class="icon">
-                            <i class="fa fa-html5 fa-2x"></i>
+                            <i class="fa fa-gamepad fa-2x"></i>
                         </div>
                         
                         <div class="icon-block-description">
-                            <h4>HTML5 &amp; CSS3</h4>
-                            <p>Has ne tritani atomorum conclusionemque, in dolorum volumus cotidieque eum. At vis choro
-                                neglegentur iudico</p>
+                            <h4>¿Que es Arduino?</h4>
+                            <p>Arduino es una placa informática con pins, conexiones USB, WiFi o de video, que te permite
+                                programar microcomputadoras en sencillos pasos. 
+                            </p>
                         </div>
                     </div>
                   
-
-                    
                     <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.3s">
                         <div class="icon">
-                            <i class="fa fa-bolt fa-2x"></i>
+                            <i class="fa fa-code fa-2x"></i>
                         </div>                       
                         <div class="icon-block-description">
-                            <h4>Easy to Use</h4>
-                            <p>Cu vero ipsum vim, doctus facilisi sea in. Eam ex falli honestatis repudiandae, sit
-                                detracto mediocrem disputationi</p>
+                            <h4>¿Como lo hago?</h4>
+                            <p>Arduino tiene su propia interfaz de código e incluso su propio lenguaje, con sentencias escritas en código
+                                puedes darle órdenes a tu placa.
+                            </p>
                         </div>
                     </div>
-                    
-
                     
                     <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.5s">                        
                         <div class="icon">
-                            <i class="fa fa-tablet fa-2x"></i>
+                            <i class="fa fa-star fa-2x"></i>
                         </div>                       
                         <div class="icon-block-description">
-                            <h4>Fully Responsive</h4>
-                            <p>Id porro tritani recusabo usu, eum intellegam consequuntur et. Fugit debet ea sit, an pro
-                                nemore vivendum</p>
+                            <h4>¿Es difícil?</h4>
+                            <p>Nada en esta vida es fácil, sin embargo, con dedicación y algunos conocimientos básicos de computación
+                                podrás comenzar a programar Arduino.
+                            </p>
                         </div>
                     </div>
                     
-
                     <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.5s">                       
                         <div class="icon">
                             <i class="fa fa-rocket fa-2x"></i>
                         </div>                       
                         <div class="icon-block-description">
-                            <h4>Parallax Effect</h4>
-                            <p>Id porro tritani recusabo usu, eum intellegam consequuntur et. Fugit debet ea sit, an pro
-                                nemore vivendum</p>
+                            <h4>¿Que puedo hacer con Arduino?</h4>
+                            <p>Una vez que logres encender tu primer LED te darás cuenta que tu imaginación es el límite.</p>
                         </div>
                     </div>              
                 </div>
             </div>
         </section>
         
-
-
-       
         <aside id="gallery" class="row text-center scrollto clearfix" data-featherlight-gallery
                  data-featherlight-filter="a">
-
                 <a href="../../images/arduino.png" data-featherlight="image" class="col-3 wow fadeIn firstImage"
                    data-wow-delay="0.1s"><img src={Placa} alt="arduino"/></a>
                 <a href="images/gallery-images/gallery-image-2.jpg" data-featherlight="image" class="col-3 wow fadeIn secondImage"
@@ -230,135 +205,93 @@ class Landing extends Component{
                    data-wow-delay="0.9s"><img src={Shop} alt="shop"/></a>
                 <a href="images/gallery-images/gallery-image-6.jpg" data-featherlight="image" class="col-3 wow fadeIn"
                    data-wow-delay="0.7s"><img src={About} alt="about"/></a>
-
         </aside>
         
-
-
-        
         <div id="services" class="scrollto clearfix">
-
             <div class="row no-padding-bottom clearfix">
-
-
-                
                 <div class="col-3">
-                  
                     <blockquote class="testimonial text-right bigtest">
-                        <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore
-                            et dolore magna aliqua</q>
-                        <footer>— John Doe, Happy Customer</footer>
+                        <q>La ciencia es una sola luz, e iluminar con ella cualquier parte, es iluminar con ella el mundo entero.</q>
+                        <footer>— Isaac Asimov, pionero de la robótica</footer>
                     </blockquote>
-                  
-
+                    <img src={vintageRobot} alt="robotito"/>
                 </div>
                
-
-                
                 <div class="col-3">
                     <div class="section-heading">
-                        <h3>BELIEVING</h3>
-                        <h2 class="section-title">Focusing On What Matters Most</h2>
-                        <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam!</p>
+                        <h3>CREE EN TI</h3>
+                        <h2 class="section-title">El futuro se construye día a día</h2>
+                        <p class="section-subtitle">Existen personas en la historia de la Humanidad que han estado destinados a 
+                        dar los más grandes regalos a la ciencia con su conocimiento.</p>
                     </div>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                        dicta sunt explicabo.
+                    <p>Isaac Asimov es el gran pionero de la robótica Universal. Alguien que hizo de la curiosidad y la investigación
+                        su arma más poderosa en contra de la ignorancia. ¿Viste "El Hombre Bicentenario"? Es producto de la gran mente de Asimov.
+                        ¿"Yo, Robot"? También.
                     </p>
                     <p>
-                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                        consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-                        Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet!
+                        Sé siempre curioso y no te rindas. Investiga hasta que logres lo que quieres. En tu mente tienes la mejor herramienta.
+                        Para conocer más acerca de Asimov, te invitamos a ver el siguiente video.
                     </p>
-                    
                     <a href="https://www.youtube.com/watch?v=whznk5G3K2c" data-videoid="UYJ5IjBRlW8" data-videosite="youtube" class="button video link-lightbox">
-                        WATCH VIDEO <i class="fa fa-play" aria-hidden="true"></i>
+                        VER VIDEO <i class="fa fa-play" aria-hidden="true"></i>
                     </a>
                 </div>
                 
 
                 <div class="col-3 doodle">
-                    <img src={CuteRobots} alt="Dancer"/>
+                    <img src={CuteRobots} alt="CuteRobots"/>
                 </div>
-
             </div>
-
-
         </div>
         
-
-       
         <aside id="testimonials" class="scrollto text-center" data-enllax-ratio=".2">
-
             <div class="row clearfix">
-
                 <div class="section-heading">
-                    <h3>FEEDBACK</h3>
-                    <h2 class="section-title">What our customers are saying</h2>
+                    <h3>TU OPINIÓN ES LO MÁS IMPORTANTE</h3>
+                    <h2 class="section-title">¡Muchas gracias!</h2>
                 </div>
 
-                
                 <blockquote class="col-3 testimonial classic">
                     <img src={Spiderman} alt="spiderman"/>
-                    <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore
-                        et dolore magna aliqua</q>
-                    <footer>John Doe - Happy Customer</footer>
+                    <q>Una vez abrí mi computadora para saber como funcionaba, y la descompuse. ¡Pero aprendí muchas cosas!</q>
+                    <footer>Spiderman - Feliz Investigador</footer>
                 </blockquote>
           
-
-               
                 <blockquote class="col-3 testimonial classic">
                     <img src={RobotAvatar} alt="robotavatar"/>
-                    <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore
-                        et dolore magna aliqua</q>
-                    <footer>Roslyn Doe - Happy Customer</footer>
+                    <q>Siempre le tuve miedo a la programación, pensaba que el código era muy difícil, y lo es. Pero si uno es persistente 
+                        puede lograr muchas cosas.
+                    </q>
+                    <footer>RoboChild - Feliz Programador</footer>
                 </blockquote>
-                
-
                 
                 <blockquote class="col-3 testimonial classic">
                     <img src={Zombie} alt="zombie"/>
-                    <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore
-                        et dolore magna aliqua</q>
-                    <footer>Thomas Doe - Happy Customer</footer>
+                    <q>El futuro está en nuestras manos, los robots son sensacionales.</q>
+                    <footer>CodeZombie - Feliz Emprendedor</footer>
                 </blockquote>
-                
-
             </div>
-
         </aside>
-       
-
         
         <section id="clients" class="scrollto clearfix">
             <div class="row clearfix">
-
                 <div class="col-3">
-
                     <div class="section-heading">
-                        <h3>TRUST</h3>
-                        <h2 class="section-title">Companies who use our services</h2>
-                        <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam!</p>
+                        <h3>Historia de los mejores</h3>
+                        <h2 class="section-title">Grandes videojuegos que hicieron historia</h2>
+                        <p class="section-subtitle">Programar un videojuego es muy parecido a programar un robot: darle órdenes a todo un conjunto
+                        de chips y dispositivos para lograr algo. Por eso, aquí te compartimos la historia de grandes videojuegos que hicieron historia.</p>
                     </div>
-
                 </div>
 
                 <div class="col-2-3">
-
                     <a href="https://www.youtube.com/watch?v=_13wt0p1XeE" class="col-3">
                         <img src={Pacman} alt="Pacman"/>
                         <div class="client-overlay"><span>Pacman</span></div>
                     </a>
                     <a href="https://www.youtube.com/watch?v=4zkmmXSbr3Y" class="col-3">
                         <img src={Mario} alt="Mario"/>
-                        <div class="client-overlay"><span>Mario</span></div>
+                        <div class="client-overlay"><span>Mario Bros.</span></div>
                     </a>
                     <a href="https://www.youtube.com/watch?v=IUb_qqj-1ug" class="col-3">
                         <img src={Ryu} alt="Street"/>
@@ -384,34 +317,21 @@ class Landing extends Component{
                         <img src={Space} alt="Space"/>
                         <div class="client-overlay"><span>Space Invaders</span></div>
                     </a>
-
                     <a href="https://www.youtube.com/watch?v=khgvi5lm8E8" class="col-3">
                         <img src={Mortal} alt="MortalK"/>
                         <div class="client-overlay"><span>Mortal Kombat</span></div>
                     </a>
-
                 </div>
-
             </div>
         </section>
-
-    
-
     </main>
    
-
-
-    
     <footer id="landing-footer" class="clearfix">
         <div class="row clearfix">
-
             <p id="copyright" class="col-2">Developed by Gus Zuppa</p>
         </div>
     </footer>
-   
-
 </div>
-
 
 </div>
 
