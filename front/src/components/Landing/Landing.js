@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-/*import Nav from '../Nav/Nav'
-import Banner from '../../images/banner-img.png'*/
+/*import Nav from '../Nav/Nav'*/
+import Logo from '../../images/robokids.png';
+import Placa from '../../images/arduino.png';
+import CodeKids from '../../images/codekids.png';
+import PurpleRobot from '../../images/banner-img.png';
 
 
 
@@ -35,8 +38,10 @@ class Landing extends Component{
                 <div class="col-1">
 
                     
-                    <div id="logo" class="logoimagen">
-                    </div>
+                <div id="logo">
+                <img src={Logo} id="banner-logo" alt="Landing Page"/>
+                <img src={Logo} id="navigation-logo" alt="Landing Page"/>  
+                </div>
                   
 
                     <aside>
@@ -221,11 +226,11 @@ class Landing extends Component{
                  data-featherlight-filter="a">
 
                 <a href="../../images/arduino.png" data-featherlight="image" class="col-3 wow fadeIn firstImage"
-                   data-wow-delay="0.1s"><img src="images/arduino.png" alt="arduino"/></a>
+                   data-wow-delay="0.1s"><img src={Placa} alt="arduino"/></a>
                 <a href="images/gallery-images/gallery-image-2.jpg" data-featherlight="image" class="col-3 wow fadeIn secondImage"
-                   data-wow-delay="0.3s"><img src="images/gallery-images/gallery-image-2.jpg" alt="Landing Page"/></a>
+                   data-wow-delay="0.3s"><img src={CodeKids} alt="codekids"/></a>
                 <a href="images/gallery-images/gallery-image-3.jpg" data-featherlight="image" class="col-3 wow fadeIn"
-                   data-wow-delay="0.5s"><img src="images/gallery-images/gallery-image-3.jpg" alt="Landing Page"/></a>
+                   data-wow-delay="0.5s"><img src={PurpleRobot} alt="purplerobot"/></a>
                 <a href="images/gallery-images/gallery-image-4.jpg" data-featherlight="image" class="col-3 wow fadeIn"
                    data-wow-delay="1.1s"><img src="images/gallery-images/gallery-image-4.jpg" alt="Landing Page"/></a>
                 <a href="images/gallery-images/gallery-image-5.jpg" data-featherlight="image" class="col-3 wow fadeIn"
