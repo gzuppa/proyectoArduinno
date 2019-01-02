@@ -21,6 +21,7 @@ import Megaman from '../../images/megaman.jpg';
 import Space from '../../images/space.png';
 import Mortal from '../../images/mk.png';
 import vintageRobot from '../../images/vintagerobot.jpg';
+import Nav from '../Nav/Nav'
 
 
 
@@ -82,34 +83,8 @@ class Landing extends Component{
                         </ul>
                     </aside>
 
-                    <nav id="nav-main">
-                        <ul>
-                            <li>
-                                <a href="#banner">Home</a>
-                            </li>
-                            <li>
-                                <a href="#">Programar Arduino</a>
-                            </li>
-                            <li>
-                                <a href="#gallery">Aprender código</a>
-                            </li>
-                            <li>
-                                <a href="#services">Robots!</a>
-                            </li>
-                            <li>
-                                <a href="#testimonials">Tutoriales</a>
-                            </li>
-                            <li>
-                                <a href="#clients">Tienda</a>
-                            </li>
-                            <li>
-                                <a href="#pricing"><strong>Login</strong></a>
-                            </li>
-                        </ul>
-                    </nav>
+             <Nav />
 
-                    <div id="nav-trigger"><span></span></div>
-                    <nav id="nav-mobile"></nav>
                 </div>
             </div>
         </div>

@@ -9,6 +9,7 @@ import './css/style.css'
 import './css/main.css'
 import './css/util.css'
 import './css/icon-font.min.css'
+import './css/article-list-large.css'
 
 /*import './javascripts/jquery-2.2.4.min.js';*/
 /*import './javascripts/bootstrap.min.js';*/
