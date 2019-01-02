@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {login} from "../../service";
+import Robotcito from '../../images/bender.png';
 
 class Login extends Component{
 
@@ -32,44 +33,56 @@ handleSubmit = (e) => {
     let {email, password, confirmPassword} = this.state.user;
     return(
 
-      <form onSubmit={this.handleSubmit}>
+<div>
 
-                <div>
-                    <label htmlFor="">
-                        Email:
-                        <input
-                            onChange={this.handleChange}
+<div class="limiter">
+		<div class="container-login100"><img src={Robotcito}/>
+			<div class="wrap-login100 p-t-30 p-b-50">
+				<span class="login100-form-title p-b-41">
+					¡Bienvenido!
+				</span>
+				<form class="login100-form validate-form p-b-33 p-t-5">
+
+					<div class="wrap-input100 validate-input" data-validate = "Enter username">
+						<input class="input100" onChange={this.handleChange}
                             type="email"
-                            value={email}
                             name="email"
-                            placeholder="ejemplo@ejemplo.com"/>
-                    </label>
-                </div>
+                            value={email} placeholder="Tu email" />
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
 
-                <div>
-                    <label htmlFor="">
-                        Password:
-                        <input
-                            onChange={this.handleChange}
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<input class="input100" onChange={this.handleChange}
                             type="password"
                             name="password"
-                            value={password}/>
-                    </label>
-                </div>
+                            value={password} placeholder="Password"/>
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+					</div>
 
-                <div>
-                    <label htmlFor="">
-                        Confirm Password:
-                        <input
-                            onChange={this.handleChange}
+                    <div class="wrap-input100 validate-input" data-validate="Enter password">
+						<input class="input100" onChange={this.handleChange}
                             type="password"
-                            value={confirmPassword}
-                            name="confirmPassword"/>
-                    </label>
-                </div>
-                <button type="submit">Login</button>
+                            name="confirmPassword"
+                            value={confirmPassword} placeholder="Confirma Password"/>
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+					</div>
 
-            </form>
+					<div class="container-login100-form-btn m-t-32">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+       
+    </div>
+
     )
   }
 }
