@@ -1,9 +1,25 @@
 import React, { Component } from 'react';
 /*import Nav from '../Nav/Nav'*/
 import Logo from '../../images/robokids.png';
-import Placa from '../../images/arduino.png';
+import Placa from '../../images/arduinokit.png';
 import CodeKids from '../../images/codekids.png';
 import PurpleRobot from '../../images/banner-img.png';
+import Teaching from '../../images/teach.jpg';
+import Shop from '../../images/shopp.jpg';
+import About from '../../images/aboutt.jpg';
+import CuteRobots from '../../images/vintage.jpg';
+import Spiderman from '../../images/spiderman.png';
+import RobotAvatar from '../../images/robotavatar.png';
+import Zombie from '../../images/zombieavatar.png';
+import Pacman from '../../images/pacman.png';
+import Mario from '../../images/mario.png';
+import Ryu from '../../images/ryu.png';
+import Tetris from '../../images/tetris.jpg';
+import Zelda from '../../images/link.png';
+import Resident from '../../images/re1.jpg';
+import Megaman from '../../images/megaman.jpg';
+import Space from '../../images/space.png';
+import Mortal from '../../images/mk.png';
 
 
 
@@ -14,7 +30,7 @@ class Landing extends Component{
     this.state = {
 
     }
-  }
+  } 
 
   render(){
     return(
@@ -49,28 +65,23 @@ class Landing extends Component{
                         
                         <ul class="social-icons">
                             <li>
-                                <a target="_blank" title="Facebook" href="https://www.facebook.com/username">
+                                <a title="Facebook" href="https://www.facebook.com/gus.zuppa">
                                     <i class="fa fa-facebook fa-1x"></i><span>Facebook</span>
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" title="Google+" href="http://google.com/+username">
-                                    <i class="fa fa-google-plus fa-1x"></i><span>Google+</span>
+                                <a title="GitHub" href="http://github.com/gzuppa">
+                                    <i class="fa fa-github fa-1x"></i><span>GitHub</span>
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" title="Twitter" href="http://www.twitter.com/username">
+                                <a title="Twitter" href="http://www.twitter.com/guszuppa">
                                     <i class="fa fa-twitter fa-1x"></i><span>Twitter</span>
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" title="Instagram" href="http://www.instagram.com/username">
+                                <a title="Instagram" href="http://www.instagram.com/guszuppa">
                                     <i class="fa fa-instagram fa-1x"></i><span>Instagram</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" title="behance" href="http://www.behance.net">
-                                    <i class="fa fa-behance fa-1x"></i><span>Behance</span>
                                 </a>
                             </li>
                         </ul>
@@ -85,22 +96,22 @@ class Landing extends Component{
                                 <a href="#banner">Home</a>
                             </li>
                             <li>
-                                <a href="#about">About</a>
+                                <a href="#">Programar Arduino</a>
                             </li>
                             <li>
-                                <a href="#gallery">Gallery</a>
+                                <a href="#gallery">Aprender código</a>
                             </li>
                             <li>
-                                <a href="#services">Services</a>
+                                <a href="#services">Robots!</a>
                             </li>
                             <li>
-                                <a href="#testimonials">Testimonials</a>
+                                <a href="#testimonials">Tutoriales</a>
                             </li>
                             <li>
-                                <a href="#clients">Clients</a>
+                                <a href="#clients">Tienda</a>
                             </li>
                             <li>
-                                <a href="#pricing">Pricing</a>
+                                <a href="#pricing">Acerca de nosotros</a>
                             </li>
                         </ul>
                     </nav>
@@ -119,13 +130,14 @@ class Landing extends Component{
             <div class="col-38">
 
                 <div class="section-heading">
-                    <h1>A FREE AND SIMPLE LANDING PAGE</h1>
-                    <h2>Namari is a free landing page template you can use for your projects. It is free to use for your
-                        personal and commercial projects, enjoy!</h2>
+                    <h1>PROGRAMAR UN ROBOT ES SUPER DIVERTIDO</h1>
+                    <h2>En RoboKids aprenderás a programar tus primeros robots, a comprender el código,
+                        y acerca de videojuegos. ¡La imaginación es el límite!
+                    </h2>
                 </div>
 
                
-                <a href="#" class="button">START CREATING TODAY</a>
+                <a href="#" class="button">¡COMIENZA AHORA!</a>
                 
 
             </div>
@@ -135,27 +147,19 @@ class Landing extends Component{
 
     
     <main id="content">
-
-       
         <section id="about" class="introduction scrollto">
-
             <div class="row clearfix">
-
                 <div class="col-3">
                     <div class="section-heading">
-                        <h3>SUCCESS</h3>
+                        <h3>¿Y COMO EMPIEZO?</h3>
                         <h2 class="section-title">How We Help You To Sell Your Product</h2>
                         <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam!</p>
                     </div>
-
                 </div>
 
                 <div class="col-2-3">
-
-                    
                     <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.1s">
-                       
                         <div class="icon">
                             <i class="fa fa-html5 fa-2x"></i>
                         </div>
@@ -170,11 +174,9 @@ class Landing extends Component{
 
                     
                     <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.3s">
-                        
                         <div class="icon">
                             <i class="fa fa-bolt fa-2x"></i>
-                        </div>
-                       
+                        </div>                       
                         <div class="icon-block-description">
                             <h4>Easy to Use</h4>
                             <p>Cu vero ipsum vim, doctus facilisi sea in. Eam ex falli honestatis repudiandae, sit
@@ -184,12 +186,10 @@ class Landing extends Component{
                     
 
                     
-                    <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.5s">
-                        
+                    <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.5s">                        
                         <div class="icon">
                             <i class="fa fa-tablet fa-2x"></i>
-                        </div>
-                       
+                        </div>                       
                         <div class="icon-block-description">
                             <h4>Fully Responsive</h4>
                             <p>Id porro tritani recusabo usu, eum intellegam consequuntur et. Fugit debet ea sit, an pro
@@ -198,25 +198,18 @@ class Landing extends Component{
                     </div>
                     
 
-                    <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.5s">
-                       
+                    <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.5s">                       
                         <div class="icon">
                             <i class="fa fa-rocket fa-2x"></i>
-                        </div>
-                       
+                        </div>                       
                         <div class="icon-block-description">
                             <h4>Parallax Effect</h4>
                             <p>Id porro tritani recusabo usu, eum intellegam consequuntur et. Fugit debet ea sit, an pro
                                 nemore vivendum</p>
                         </div>
-                    </div>
-                    
-
+                    </div>              
                 </div>
-
             </div>
-
-
         </section>
         
 
@@ -232,11 +225,11 @@ class Landing extends Component{
                 <a href="images/gallery-images/gallery-image-3.jpg" data-featherlight="image" class="col-3 wow fadeIn"
                    data-wow-delay="0.5s"><img src={PurpleRobot} alt="purplerobot"/></a>
                 <a href="images/gallery-images/gallery-image-4.jpg" data-featherlight="image" class="col-3 wow fadeIn"
-                   data-wow-delay="1.1s"><img src="images/gallery-images/gallery-image-4.jpg" alt="Landing Page"/></a>
+                   data-wow-delay="1.1s"><img src={Teaching} alt="teaching"/></a>
                 <a href="images/gallery-images/gallery-image-5.jpg" data-featherlight="image" class="col-3 wow fadeIn"
-                   data-wow-delay="0.9s"><img src="images/gallery-images/gallery-image-5.jpg" alt="Landing Page"/></a>
+                   data-wow-delay="0.9s"><img src={Shop} alt="shop"/></a>
                 <a href="images/gallery-images/gallery-image-6.jpg" data-featherlight="image" class="col-3 wow fadeIn"
-                   data-wow-delay="0.7s"><img src="images/gallery-images/gallery-image-6.jpg" alt="Landing Page"/></a>
+                   data-wow-delay="0.7s"><img src={About} alt="about"/></a>
 
         </aside>
         
@@ -280,14 +273,14 @@ class Landing extends Component{
                         Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet!
                     </p>
                     
-                    <a href="#" data-videoid="UYJ5IjBRlW8" data-videosite="youtube" class="button video link-lightbox">
+                    <a href="https://www.youtube.com/watch?v=whznk5G3K2c" data-videoid="UYJ5IjBRlW8" data-videosite="youtube" class="button video link-lightbox">
                         WATCH VIDEO <i class="fa fa-play" aria-hidden="true"></i>
                     </a>
                 </div>
                 
 
-                <div class="col-3">
-                    <img src="images/dancer.jpg" alt="Dancer"/>
+                <div class="col-3 doodle">
+                    <img src={CuteRobots} alt="Dancer"/>
                 </div>
 
             </div>
@@ -308,7 +301,7 @@ class Landing extends Component{
 
                 
                 <blockquote class="col-3 testimonial classic">
-                    <img src="images/user-images/user-1.jpg" alt="User"/>
+                    <img src={Spiderman} alt="spiderman"/>
                     <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore
                         et dolore magna aliqua</q>
@@ -318,7 +311,7 @@ class Landing extends Component{
 
                
                 <blockquote class="col-3 testimonial classic">
-                    <img src="images/user-images/user-2.jpg" alt="User"/>
+                    <img src={RobotAvatar} alt="robotavatar"/>
                     <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore
                         et dolore magna aliqua</q>
@@ -328,7 +321,7 @@ class Landing extends Component{
 
                 
                 <blockquote class="col-3 testimonial classic">
-                    <img src="images/user-images/user-3.jpg" alt="User"/>
+                    <img src={Zombie} alt="zombie"/>
                     <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore
                         et dolore magna aliqua</q>
@@ -359,42 +352,42 @@ class Landing extends Component{
 
                 <div class="col-2-3">
 
-                    <a href="#" class="col-3">
-                        <img src="images/company-images/company-logo1.png" alt="Company"/>
-                        <div class="client-overlay"><span>Tree</span></div>
+                    <a href="https://www.youtube.com/watch?v=_13wt0p1XeE" class="col-3">
+                        <img src={Pacman} alt="Pacman"/>
+                        <div class="client-overlay"><span>Pacman</span></div>
                     </a>
-                    <a href="#" class="col-3">
-                        <img src="images/company-images/company-logo2.png" alt="Company"/>
-                        <div class="client-overlay"><span>Fingerprint</span></div>
+                    <a href="https://www.youtube.com/watch?v=4zkmmXSbr3Y" class="col-3">
+                        <img src={Mario} alt="Mario"/>
+                        <div class="client-overlay"><span>Mario</span></div>
                     </a>
-                    <a href="#" class="col-3">
-                        <img src="images/company-images/company-logo3.png" alt="Company"/>
-                        <div class="client-overlay"><span>The Man</span></div>
+                    <a href="https://www.youtube.com/watch?v=IUb_qqj-1ug" class="col-3">
+                        <img src={Ryu} alt="Street"/>
+                        <div class="client-overlay"><span>Street Fighter</span></div>
                     </a>
-                    <a href="#" class="col-3">
-                        <img src="images/company-images/company-logo4.png" alt="Company"/>
-                        <div class="client-overlay"><span>Mustache</span></div>
+                    <a href="https://www.youtube.com/watch?v=_fQtxKmgJC8" class="col-3">
+                        <img src={Tetris} alt="Tetris"/>
+                        <div class="client-overlay"><span>Tetris</span></div>
                     </a>
-                    <a href="#" class="col-3">
-                        <img src="images/company-images/company-logo5.png" alt="Company"/>
-                        <div class="client-overlay"><span>Goat</span></div>
+                    <a href="https://www.youtube.com/watch?v=R9DdAB7gACU" class="col-3">
+                        <img src={Zelda} alt="Zelda"/>
+                        <div class="client-overlay"><span>The Legend of Zelda</span></div>
                     </a>
-                    <a href="#" class="col-3">
-                        <img src="images/company-images/company-logo6.png" alt="Company"/>
-                        <div class="client-overlay"><span>Justice</span></div>
+                    <a href="https://www.youtube.com/watch?v=Xjkr-8lrK2w" class="col-3">
+                        <img src={Resident} alt="Resident"/>
+                        <div class="client-overlay"><span>Resident Evil</span></div>
                     </a>
-                    <a href="#" class="col-3">
-                        <img src="images/company-images/company-logo7.png" alt="Company"/>
-                        <div class="client-overlay"><span>Ball</span></div>
+                    <a href="https://www.youtube.com/watch?v=Pl3NkaEH1z8" class="col-3">
+                        <img src={Megaman} alt="Megaman"/>
+                        <div class="client-overlay"><span>MegaMan</span></div>
                     </a>
-                    <a href="#" class="col-3">
-                        <img src="images/company-images/company-logo8.png" alt="Company"/>
-                        <div class="client-overlay"><span>Cold</span></div>
+                    <a href="https://www.youtube.com/watch?v=57s3ylANAhM" class="col-3">
+                        <img src={Space} alt="Space"/>
+                        <div class="client-overlay"><span>Space Invaders</span></div>
                     </a>
 
-                    <a href="#" class="col-3">
-                        <img src="images/company-images/company-logo9.png" alt="Company"/>
-                        <div class="client-overlay"><span>Cold</span></div>
+                    <a href="https://www.youtube.com/watch?v=khgvi5lm8E8" class="col-3">
+                        <img src={Mortal} alt="MortalK"/>
+                        <div class="client-overlay"><span>Mortal Kombat</span></div>
                     </a>
 
                 </div>
@@ -402,81 +395,6 @@ class Landing extends Component{
             </div>
         </section>
 
-
-       
-        <section id="pricing" class="secondary-color text-center scrollto clearfix ">
-            <div class="row clearfix">
-
-                <div class="section-heading">
-                    <h3>YOUR CHOICE</h3>
-                    <h2 class="section-title">We have the right package for you</h2>
-                </div>
-
-                
-                <div class="pricing-block col-3 wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="pricing-block-content">
-                        <h3>Personal</h3>
-                        <p class="pricing-sub">The standard version</p>
-                        <div class="pricing">
-                            <div class="price"><span>$</span>19</div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                        </div>
-                        <ul>
-                            <li>5 Downloads</li>
-                            <li>2 Extensions</li>
-                            <li>Tutorials</li>
-                            <li>Forum Support</li>
-                            <li>1 year free updates</li>
-                        </ul>
-                        <a href="#" class="button">BUY TODAY</a>
-                    </div>
-                </div>
-                
-
-               
-                <div class="pricing-block featured col-3 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="pricing-block-content">
-                        <h3>Student</h3>
-                        <p class="pricing-sub">Most popular choice</p>
-                        <div class="pricing">
-                            <div class="price"><span>$</span>29</div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                        </div>
-                        <ul>
-                            <li>15 Downloads</li>
-                            <li>5 Extensions</li>
-                            <li>Tutorials with Files</li>
-                            <li>Forum Support</li>
-                            <li>2 years free updates</li>
-                        </ul>
-                        <a href="#" class="button">BUY TODAY</a>
-                    </div>
-                </div>
-                
-
-                
-                <div class="pricing-block col-3 wow fadeInUp" data-wow-delay="0.8s">
-                    <div class="pricing-block-content">
-                        <h3>Business</h3>
-                        <p class="pricing-sub">For the whole team</p>
-                        <div class="pricing">
-                            <div class="price"><span>$</span>49</div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                        </div>
-                        <ul>
-                            <li>Unlimited Downloads</li>
-                            <li>Unlimited Extensions</li>
-                            <li>HD Video Tutorials</li>
-                            <li>Chat Support</li>
-                            <li>Lifetime free updates</li>
-                        </ul>
-                        <a href="#" class="button">BUY TODAY</a>
-                    </div>
-                </div>
-                
-
-            </div>
-        </section>
     
 
     </main>
@@ -487,37 +405,7 @@ class Landing extends Component{
     <footer id="landing-footer" class="clearfix">
         <div class="row clearfix">
 
-            <p id="copyright" class="col-2">Made with love by <a href="https://www.shapingrain.com">ShapingRain</a></p>
-
-           
-            <ul class="col-2 social-icons">
-                <li>
-                    <a target="_blank" title="Facebook" href="https://www.facebook.com/username">
-                        <i class="fa fa-facebook fa-1x"></i><span>Facebook</span>
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" title="Google+" href="http://google.com/+username">
-                        <i class="fa fa-google-plus fa-1x"></i><span>Google+</span>
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" title="Twitter" href="http://www.twitter.com/username">
-                        <i class="fa fa-twitter fa-1x"></i><span>Twitter</span>
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" title="Instagram" href="http://www.instagram.com/username">
-                        <i class="fa fa-instagram fa-1x"></i><span>Instagram</span>
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" title="behance" href="http://www.behance.net">
-                        <i class="fa fa-behance fa-1x"></i><span>Behance</span>
-                    </a>
-                </li>
-            </ul>
-          
+            <p id="copyright" class="col-2">Developed by Gus Zuppa</p>
         </div>
     </footer>
    
