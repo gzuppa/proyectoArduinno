@@ -74,10 +74,10 @@ class Nav extends Component{
                                 <a href="#services">Robots!</a>
                             </li>
                             <li>
-                                <a href="#testimonials">Tutoriales</a>
+                                <a href="#testimonials">Mi Perfil</a>
                             </li>
                             <li>
-                                <a href="#clients">Tienda</a>
+                                <Link to="/shop">Tienda</Link>
                             </li>
                             <li>
                                 <Link to="/login"><strong>Login</strong></Link>
@@ -87,7 +87,7 @@ class Nav extends Component{
 
                     <div id="nav-trigger"><span></span></div>
                     <nav id="nav-mobile"></nav>
-                </div>
+                </div>  
             </div>
         </div>
       

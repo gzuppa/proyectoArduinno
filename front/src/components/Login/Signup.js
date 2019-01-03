@@ -59,6 +59,14 @@ handleSubmit = (e) => {
 						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
 					</div>
 
+                    <div class="wrap-input100 validate-input" data-validate="Enter password">
+						<input class="input100" onChange={this.handleChange}
+                            type="password"
+                            name="confirmPassword"
+                            value={confirmPassword} placeholder="Confirma Password"/>
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+					</div>
+
 					<div class="container-login100-form-btn m-t-32">
 						<button class="login100-form-btn">
 							Login

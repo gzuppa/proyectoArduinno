@@ -12,6 +12,8 @@ import './css/icon-font.min.css'
 import './css/article-list-large.css'
 import './css/image-list-small.css'
 import './css/bulma.min.css'
+import './css/modal-fx.min.css'
+
 
 /*import './javascripts/jquery.1.8.3.min.js'
 import './javascripts/jquery.easing.min.js'
