@@ -12,6 +12,8 @@ import ThreeIcon from '../../images/numbers/three.png'
 import LedRojo from '../../images/ejemplos/arduinoledrojo.png'
 import FourIcon from '../../images/numbers/four.png'
 import FiveIcon from '../../images/numbers/five.png'
+import SixIcon from '../../images/numbers/six.png'
+import codeLed from '../../images/ejemplos/codeledarduino.png'
 
 class ArduinoLed extends Component{
 
@@ -205,7 +207,127 @@ class ArduinoLed extends Component{
            </article>
         </div>
 
-      Ahora vamos a utilizar <strong>NPM</strong> que es un manejador de paquetes perteneciente a NodeJS
+      Ahora vamos a utilizar <strong>NPM</strong> que es un manejador de paquetes perteneciente a NodeJS el cual nos servirá para instalar y ejecutar las
+      dependencias que necesitemos, para ello, ejecuta los siguientes comandos:
+
+      <div class="box">
+          <article class="media">
+              <div class="content">
+              <p>      
+          <strong> npm install </strong><br/>
+          <strong> npm init </strong>
+              </p>
+        </div>
+           </article>
+        </div>
+
+      Ya que tenemos instalado NPM y NodeJS vamos a instalar las dependencias necesarias para nuestro servidor y empezar a escribir el código. En este caso
+      ocuparemos <strong>Express</strong>, herramienta con la que comunicaremos via Web nuestro código y construiremos nuestra interfaz; <strong>socket.io</strong> que
+      nos permitirá utilizar nuestros comandos en tiempo real y finalmente el fabuloso <strong>Johnny-Five</strong> para traducir a JavaScript las ordenes
+      a nuestro Arduino. Ahora, ejecuta el siguiente comando:
+
+      <div class="box">
+          <article class="media">
+              <div class="content">
+              <p>      
+          <strong> npm i -S express socket.io johnny-five </strong><br/>
+              </p>
+        </div>
+           </article>
+        </div>
+
+      </p>
+    </div>
+  </div>
+</article>
+
+
+<article class="media section-subtitle">
+  <figure class="media-left">
+    <p class="image is-64x64">
+      <img src={SixIcon}/>
+    </p>
+  </figure>
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong>Firmata e Index.js</strong> <small>Comencemos con el código!</small> 
+        <br/>
+      Sabemos que necesitamos tanto a Firmata como a Johnny-Five para dar instrucciones a nuestro Arduino. A continuación vamos a instalar las dependencias
+      de Firmata y te enseñaré a leer un archivo <strong>package.json</strong>. Ejecuta la siguiente linea:
+
+      <div class="box">
+          <article class="media">
+              <div class="content">
+              <p>      
+          <strong> npm i -S firmata firmata-party </strong><br/>
+              </p>
+        </div>
+           </article>
+        </div>
+      
+      Una vez instalados vamos a flashear nuestro Arduino para que pueda recibir órdenes en JavaScript. Para ello, abrimos nuestra terminal, dentro de la
+      carpeta donde hemos instalado todo y ejecutando el comando <strong>ls -a</strong> corroboramos que tengamos el archivo <strong>package.json</strong>.
+      Ya que lo hemos visto ejecutamos el siguiente comando:
+
+      <div class="box">
+          <article class="media">
+              <div class="content">
+              <p>      
+          <strong> cat package.json </strong><br/>
+              </p>
+        </div>
+           </article>
+        </div>
+
+      Para que podamos utilizar Firmata-party y flashear nuestra placa, debemos crear un script. Los scripts, son instrucciones automáticas que podemos personalizar
+      y ejecutar en nuestra terminal, de acuerdo a la configuración en nuestro package.json. En tu terminal debes tener lo siguiente despues de haber ejecutado el comando <strong>cat</strong>
+
+        <div class="box">
+          <article class="media">
+              <div class="content">
+              <p>      
+          <strong>
+            "name": "node-arduino-blink",<br/>
+            "version": "1.0.0",<br/>
+            "description": "",<br/>
+             "main": "index.js",<br/>
+    "scripts": <br/>
+    "test": "echo\"Error: no test specified\" && exit 1",<br/>
+  
+  "keywords": [],<br/>
+  "author": "",<br/>
+  "license": "ISC",<br/>
+  "dependencies": <br/>
+    "firmata": "^0.19.1",<br/>
+    "firmata-party": "^1.5.9"
+  </strong><br/>
+              </p>
+            </div>
+           </article>
+        </div> 
+
+      Aqui, vamos a sustituir la linea <strong>"test": "echo\"Error: no test specified\" && exit 1"</strong> por la siguiente <strong>"firmata": "firmata-party uno --debug"</strong>.
+      Asi, puedes regresar a tu terminal y ejecutar tu nuevo script:
+
+      <div class="box">
+          <article class="media">
+              <div class="content">
+              <p>      
+          <strong> npm run firmata </strong><br/>
+              </p>
+        </div>
+           </article>
+        </div>
+
+      Y voilá! Ya has flasheado tu Arduino y se encuentra listo para recibir ordenes JavaScript.<br/>
+      A continuación crea un archivo nuevo en la misma ubicación donde tenemos toda nuestra instalación y nombralo <strong>index.js</strong> en este archivo
+      copia el siguiente código:
+
+      <p><img class="exampleimages" src={codeLed}/></p>
+
+      Una vez que copiaste el código, regresa a tu terminal, ejecuta <strong>node index.js</strong> para abrir tu archivo y <strong>FELICIDADES!</strong> acabas
+      de hacer encender tu primer LED en Arduino con JavaScript.
 
       </p>
     </div>
