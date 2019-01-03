@@ -52,36 +52,8 @@ class Landing extends Component{
             <div class="row clearfix">
                 <div class="col-1">
 
-                <div id="logo">
-                <img src={Logo} id="banner-logo" alt="Landing Page"/>
-                <img src={Logo} id="navigation-logo" alt="Landing Page"/>  
-                </div>
                 
-                    <aside>
-
-                        <ul class="social-icons">
-                            <li>
-                                <a title="Facebook" href="https://www.facebook.com/gus.zuppa">
-                                    <i class="fa fa-facebook fa-1x"></i><span>Facebook</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a title="GitHub" href="http://github.com/gzuppa">
-                                    <i class="fa fa-github fa-1x"></i><span>GitHub</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a title="Twitter" href="http://www.twitter.com/guszuppa">
-                                    <i class="fa fa-twitter fa-1x"></i><span>Twitter</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a title="Instagram" href="http://www.instagram.com/guszuppa">
-                                    <i class="fa fa-instagram fa-1x"></i><span>Instagram</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </aside>
+                    
 
              <Nav/>
 
