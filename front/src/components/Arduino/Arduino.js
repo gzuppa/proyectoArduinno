@@ -4,6 +4,7 @@ import ArduinoLcd from '../../images/arduinolcd.png';
 import ArduinoMotor from '../../images/arduinomotor.png';
 import ArduinoButton from '../../images/arduinobutton.png';
 import Nav from '../Nav/Nav'
+import {Link} from 'react-router-dom';
 
 class Arduino extends Component{
 
@@ -38,9 +39,9 @@ class Arduino extends Component{
 
 <ul class="article-list-large">
         <li>
-            <a href="#">
+            <Link to="/arduino/arduinoled">
                 <img src={ArduinoLed} alt="Arduinoled" />
-            </a>
+            </Link>
             <h2><a href="#">Como hacer encender LEDs con Arduino paso a paso</a></h2>
             <p>En esta lección podrás hacer encender un LED con un Arduino solamente dando click en algunos botones en tu navegador.
               Pero eso no es todo. También aprenderás paso a paso como escribir el código en JavaScript para darle la orden a tu placa.
