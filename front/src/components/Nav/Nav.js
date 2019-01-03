@@ -16,6 +16,13 @@ class Nav extends Component{
   
 <div>
 
+    <div class="page-border" data-wow-duration="0.7s" data-wow-delay="0.2s">
+    <div class="top-border wow fadeInDown animated" ></div>
+    <div class="right-border wow fadeInRight animated" ></div>
+    <div class="bottom-border wow fadeInUp animated" ></div>
+    <div class="left-border wow fadeInLeft animated" ></div>
+</div>
+
 <header id="banner" class="scrollto clearfix" data-enllax-ratio=".5">
         <div id="header" class="nav-collapse">
             <div class="row clearfix">
@@ -55,7 +62,7 @@ class Nav extends Component{
                     <nav id="nav-main">
                         <ul>
                             <li>
-                                <a href="#banner">Home</a>
+                                <Link to="/">Home</Link>
                             </li>
                             <li>
                                 <Link to="/arduino">Programar Arduino</Link>

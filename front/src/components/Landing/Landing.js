@@ -22,7 +22,7 @@ import Space from '../../images/space.png';
 import Mortal from '../../images/mk.png';
 import vintageRobot from '../../images/vintagerobot.jpg';
 import Nav from '../Nav/Nav'
-
+import {Link} from 'react-router-dom';
 
 
 class Landing extends Component{
@@ -70,7 +70,7 @@ class Landing extends Component{
                     </h2>
                 </div>
 
-                <a href="#" class="button">¡COMIENZA AHORA!</a>
+                <Link to='/arduino' class="button">¡COMIENZA AHORA!</Link>
             </div>
         </div>
     </header>
@@ -140,8 +140,8 @@ class Landing extends Component{
         
         <aside id="gallery" class="row text-center scrollto clearfix" data-featherlight-gallery
                  data-featherlight-filter="a">
-                <a href="../../images/arduino.png" data-featherlight="image" class="col-3 wow fadeIn firstImage"
-                   data-wow-delay="0.1s"><img src={Placa} alt="arduino"/></a>
+                <Link to="/arduino" data-featherlight="image" class="col-3 wow fadeIn firstImage"
+                   data-wow-delay="0.1s"><img src={Placa} alt="arduino"/></Link>
                 <a href="images/gallery-images/gallery-image-2.jpg" data-featherlight="image" class="col-3 wow fadeIn secondImage"
                    data-wow-delay="0.3s"><img src={CodeKids} alt="codekids"/></a>
                 <a href="images/gallery-images/gallery-image-3.jpg" data-featherlight="image" class="col-3 wow fadeIn"
