@@ -4,6 +4,7 @@ const User = require("../models/User");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const upload = require("../helpers/multer");
+const auth = require("../helpers/auth");
 
 router.post("/login", async (req, res) => {
   const user = await User.findOne({email: req.body.email});
@@ -34,7 +35,7 @@ router.post("/register", (req, res) => {
 
   const salt = bcrypt.genSaltSync(256);
   const hashedPassword = bcrypt.hashSync(req.body.password, salt);
-
+  
   User.create({
       username: req.body.username,
       email: req.body.email,
