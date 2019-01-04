@@ -18,6 +18,7 @@ import Bonus from '../../images/bonus.png'
 import firmata from 'firmata'
 
 
+
 class ArduinoLed extends Component{
 
   constructor(){

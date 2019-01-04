@@ -1,375 +1,257 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
 import Nav from '../Nav/Nav'
+import { Container, Grid, Header } from 'semantic-ui-react'
+import Menu from './Menu'
+import ProductList from './ProductList'
+import CartList from './CartList'
+import Order from './Order'
+import style from './App.css'
 
-class Shop extends Component{
-
-  constructor(){
-    super();
+class Shop extends Component {
+  constructor(props) {
+    super(props)
     this.state = {
-
+      openOrder: false,
+      total: 0,
+      sum: 0,
+      products: [
+        {
+          id: 1,
+          name: 'Nikon D5500 24.2 Mp',
+          picture: 'https://http2.mlstatic.com/camara-D_Q_NP_100101-MLM20255371968_032015-X.webp',
+          price: 12346,
+          datails: 'Compra Protegida, recibe el producto que esperabas o te devolvemos tu dinero.',
+          marca: 'Nikon',
+          status: 5,
+        },
+        {
+          id: 2,
+          name: 'Sony Dsc-h300 20 Mp',
+          picture: 'https://http2.mlstatic.com/camara-D_Q_NP_621585-MLM25970442208_092017-X.webp',
+          price: 3938,
+          datails: 'Compra Protegida, recibe el producto que esperabas o te devolvemos tu dinero.',
+          marca: 'Sony',
+          status: 6,
+        },
+        {
+          id: 3,
+          name: 'Fujifilm X-t10 40.0 Mp',
+          picture: 'https://http2.mlstatic.com/camara-D_Q_NP_997939-MLM25733136676_072017-X.webp',
+          price: 18999,
+          datails: 'Compra Protegida, recibe el producto que esperabas o te devolvemos tu dinero.',
+          marca: 'Fujifilm',
+          status: 2,
+        },
+        {
+          id: 4,
+          name: 'Reflex Canon Eos 30 ',
+          picture: 'https://http2.mlstatic.com/camara-D_Q_NP_743505-MLM25028787002_082016-X.webp',
+          price: 1000,
+          datails: 'Compra Protegida, recibe el producto que esperabas o te devolvemos tu dinero.',
+          marca: 'Canon',
+          status: 6,
+        },
+        {
+          id: 5,
+          name: 'Holster Camera Case ',
+          picture: 'https://images-na.ssl-images-amazon.com/images/I/91cMeS6xLHL._SX522_.jpg',
+          price: 328,
+          marca: 'Amazon',
+          status: 10,
+        },
+        {
+          id: 6,
+          name: 'Olympus M. 40-150mm ',
+          picture: 'https://images-na.ssl-images-amazon.com/images/I/81vy-AiCWSL._AC_UL160_SR160,160_.jpg',
+          price: 2733,
+          marca: 'Olympus',
+          status: 4,
+        },
+        {
+          id: 7,
+          name: 'Tripié ligero ',
+          picture: 'https://images-na.ssl-images-amazon.com/images/G/33/aplusautomation/vendorimages/2ad656e6-6b25-48fd-af65-0a113979bc54.jpg._CB293876631__SR300,300_.jpg',
+          price: 372,
+          marca: 'Amazon',
+          status: 2,
+        },
+        {
+          id: 8,
+          name: 'Fujinon XF10-24MMF4 ',
+          picture: 'https://images-na.ssl-images-amazon.com/images/I/81tbbvcsJIL._AC_UL160_SR160,160_.jpg',
+          price: 25023,
+          marca: 'Fujinon',
+          status: 4,
+        },
+        {
+          id: 9,
+          name: 'Fujifilm X-T2 Mirrorless ',
+          picture: 'https://images-na.ssl-images-amazon.com/images/I/81CUJvIrFML._AC_UL160_SR160,160_.jpg',
+          price: 50399,
+          marca: 'Fujifilm',
+          status: 3,
+        },
+        {
+          id: 10,
+          name: 'LUMIX G Lens, 25mm',
+          picture: 'https://images-na.ssl-images-amazon.com/images/I/71dTWmH4vxL._SL1500_.jpg',
+          price: 3262,
+          marca: 'Panasonic',
+          status: 4,
+        },
+        {
+          id: 11,
+          name: 'Olympus OM-D E-M5 ',
+          picture: 'https://images-na.ssl-images-amazon.com/images/I/918N6QYcTjL._SL1500_.jpg',
+          price: 18688,
+          marca: 'Olympus',
+          status: 3,
+        },
+        {
+          id: 12,
+          name: 'Fujifilm X-T20 ',
+          picture: 'https://images-na.ssl-images-amazon.com/images/I/91in%2BYvDGtL._AC_UL160_SR160,160_.jpg',
+          price: 32699,
+          marca: 'Fujifilm',
+          status: 10,
+        }
+      ],
+      cart: [],
     }
-  } 
 
-  render(){
-    return(
-  
-<div>
+    this.handleSaveProduct = this.handleSaveProduct.bind(this)
+    this.handlerAddProduct = this.handlerAddProduct.bind(this)
+    this.handlerRemoveProduct = this.handlerRemoveProduct.bind(this)
+    this.handlerOpenOrder = this.handlerOpenOrder.bind(this)
+    this.handlerClearCart = this.handlerClearCart.bind(this)
+  }
 
-    <div class="page-border" data-wow-duration="0.7s" data-wow-delay="0.2s">
-    <div class="top-border wow fadeInDown animated" ></div>
-    <div class="right-border wow fadeInRight animated" ></div>
-    <div class="bottom-border wow fadeInUp animated" ></div>
-    <div class="left-border wow fadeInLeft animated" ></div>
-</div>
+  handlerClearCart() {
+    this.setState({
+      cart: [],
+      sum: 0,
+      total: 0
+    });
+  }
 
-<Nav/>
+  sumProducts(array) {
+    var total = 0
+    array.forEach(product => total += product.order)
+    this.setState({total: total})
+  }
 
-<section class="hero is-info is-small">
-      <div class="hero-body">
-        <div class="container has-text-centered">
-          <p class="title">
-            Modal Cards
-          </p>
-          <p class="subtitle">
-            Subtitle
-          </p>
-        </div>
-      </div>
-    </section>
-    <div class="box cta">
-      <p class="has-text-centered">
-        <span class="tag is-primary">New</span> Here we have modal cards. When you click on them they will open functional modal examples.
-      </p>
-    </div>
-    <section class="container">
-      <div class="columns features">
-        <div class="column is-4">
-          <div class="card is-shady">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="https://source.unsplash.com/RWnpyGtY1aU" alt="Placeholder image" class="modal-button" data-target="modal-image2"/>
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="content">
-                <h4>Click on image above</h4>
-                <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac ut consequat semper viverra nam.</p>
-                <span class="button is-link modal-button" data-target="modal-image2">Image modal</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="column is-4">
-          <div class="card is-shady">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="https://source.unsplash.com/6Ticnhs1AG0" alt="Placeholder image"/>
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="content">
-                <h4>Tempor orci dapibus ultrices in.</h4>
-                <p>Ut venenatis tellus in metus vulputate. Amet consectetur adipiscing elit pellentesque. Sed arcu non odio euismod lacinia at quis risus. Faucibus turpis in eu mi bibendum neque egestas cmonsu songue. Phasellus vestibulum lorem
-                sed risus.</p>
-                <span class="button is-link modal-button" data-target="modal-card">Modal Card</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="column is-4 modal-button" data-target="modal-image">
-          <div class="card is-shady">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="https://i.imgsafe.org/ba/baa924a5e3.png" alt="Placeholder image"/>
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="content">
-                <h4>Click anywhere on card</h4>
-                <p>Imperdiet dui accumsan sit amet nulla facilisi morbi. Fusce ut placerat orci nulla pellentesque dignissim enim. Libero id faucibus nisl tincidunt eget nullam. Commodo viverra maecenas accumsan lacus vel facilisis.</p>
-                <span class="button is-link modal-button" data-target="modal-image">Image modal</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="columns features">
-        <div class="column is-4 modal-button" data-target="modal-card">
-          <div class="card is-shady">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="https://i.imgsafe.org/3f/3f0c578f9d.jpeg" alt="Placeholder image"/>
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="content">
-                <h4>Click anywhere on card to <br/>expand into modal card</h4>
-                <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac ut consequat semper viverra nam.</p>
-                <span class="button is-link modal-button">Modal card</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="column is-4">
-          <div class="card is-shady">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="https://source.unsplash.com/hLyd1LukQ7E" alt="butterfly image" class="modal-button" data-target="modal-image4"/>
-              </figure>
-            </div>
-            <div class="card-content  modal-button" data-target="modal-card2">
-              <div class="content">
-                <h4>Click anywhere on card to <br/  >expand into modal card - header image expands into bigger image</h4>
-                <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer enim neque volutpat ac tincidunt vitae semper quis.</p>
-                <span class="button is-link modal-button">Modal card</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <section class="section">
-        <div class="container">
-          <div class="columns is-multiline">
-            <div class="column is-one-third">
-              <article class="notification media has-background-white">
-                <figure class="media-left">
-                  <span class="icon">
-                    <i class="has-text-warning fa fa-columns fa-lg"></i>
-                  </span>
-                </figure>
-                <div class="media-content">
-                  <div class="content">
-                    <h1 class="title is-size-4">Columns</h1>
-                    <p class="is-size-5 subtitle">
-                      The power of <strong>Flexbox</strong> in a simple interface
-                    </p>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="column is-one-third">
-              <article class="notification has-background-white media">
-                <figure class="media-left">
-                  <span class="icon has-text-info">
-                    <i class="fa fa-lg fa-wpforms"></i>
-                  </span>
-                </figure>
-                <div class="media-content">
-                  <div class="content">
-                    <h1 class="title is-size-4">Form</h1>
-                    <p class="is-size-5 subtitle">
-                      The indispensable <strong>form controls</strong>, designed for maximum clarity
-                    </p>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="column is-one-third">
-              <article class="notification has-background-white media">
-                <figure class="media-left">
-                  <span class="icon has-text-danger">
-                    <i class="fa fa-lg fa-cubes"></i>
-                  </span>
-                </figure>
-                <div class="media-content">
-                  <div class="content">
-                    <h1 class="title is-size-4">Components</h1>
-                    <p class="is-size-5 subtitle">
-                      Advanced multi-part components with lots of possibilities
-                    </p>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="column is-one-third">
-              <article class="notification has-background-white media">
-                <figure class="media-left">
-                  <span class="icon has-text-grey">
-                    <i class="fa fa-lg fa-cogs"></i>
-                  </span>
-                </figure>
-                <div class="media-content">
-                  <div class="content">
-                    <h1 class="title is-size-4">Modifiers</h1>
-                    <p class="is-size-5 subtitle">
-                      An <strong>easy-to-read</strong> naming system designed for humans
-                    </p>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="column is-one-third">
-              <article class="notification has-background-white media">
-                <figure class="media-left">
-                  <span class="icon has-text-primary">
-                    <i class="fa fa-lg fa-superpowers"></i>
-                  </span>
-                </figure>
-                <div class="media-content">
-                  <div class="content">
-                    <h1 class="title is-size-4">Layout</h1>
-                    <p class="is-size-5 subtitle">
-                      Design the <strong>structure</strong> of your webpage with these CSS classes
-                    </p>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="column is-one-third">
-              <article class="notification has-background-white media">
-                <figure class="media-left">
-                  <span class="icon has-text-danger">
-                    <i class="fa fa-lg fa-cube"></i>
-                  </span>
-                </figure>
-                <div class="media-content">
-                  <div class="content">
-                    <h1 class="title is-size-4">Elements</h1>
-                    <p class="is-size-5 subtitle">
-                      Essential interface elements that only require a <strong>single CSS class</strong>
-                    </p>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div class="content has-text-centered">
-        <div class="control level-item">
-          <a href="https://github.com/dansup/bulma-templates">
-            <div class="tags has-addons">
-              <span class="tag is-dark">Bulma Templates</span>
-              <span class="tag is-info">MIT license</span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </footer>
-  
+  sumTotal(array) {
+    var sum = 0
+    array.forEach(product => sum += product.total)
+    this.setState({sum: sum})
+  }
 
-   
-    <div id="modal-card" class="modal modal-fx-3dSlit">
-      <div class="modal-background"></div>
-      <div class="modal-content is-tiny">
-      
-        <div class="card">
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img src="https://source.unsplash.com/6Ticnhs1AG0" alt="Placeholder image"/>
-            </figure>
-          </div>
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-48x48">
-                  <img src="http://www.radfaces.com/images/avatars/linda-barret.jpg" alt="linda barret avatar"/>
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-4">Jane Doe</p>
-                <p class="subtitle is-6">@jane_doe</p>
-              </div>
-            </div>
-            <div class="content">
-              Laum Ipsum junkah potatoes bookin' it. Moosetown rig up I'm tellin' you way up north bookin' it can't get theyah from heeyah native bean suppah whawf Powrtland Museum of Aht, back woods hawsun around the pit mummah Yessah, mummah muckle riyht on'ta her
-              Bean's dinnahbucket bub geez bud sumpin' fierce ayuhpawt Bangah naw, Powrtland Museum of Aht down cellah sumpin' fierce hoppa bub If you can't stand the wintah you don't deserve the summah slower than molasses going uphill in January.
-              Sgn'wahl shoggor hrii uaaah R'lyeh uh'e k'yarnak Hastur hupadgh li'hee, hai f'nilgh'ri nilgh'ri n'ghftor ngftaghu vulgtlagln h'hrii throd Nyarlathotep lloig, naflsll'ha nnnsll'ha athg y-ebunma goka chtenff ehyeog cehye. Zhro y'hah
-              nogoth phlegeth stell'bsna orr'e ph'Hastur gnaiih throd, uln ya lw'nafh mg nar'luh li'hee wgah'n, sgn'wahl mg nakadishtu chlirgh hupadgh tharanak h'gnaiih.
-              <a>@bulmaio</a>.
-              <a href="#">#css</a>
-              <a href="#">#responsive</a>
-              <br/>
-              <time datetime="2018-02-02">12:45 AM - 20 June 2018</time>
-            </div>
-          </div>
-        </div>
-       
-      </div>
-      <button class="modal-close is-large" aria-label="close"></button>
-    </div>
-    
-    <div id="modal-card2" class="modal modal-fx-3dSlit">
-      <div class="modal-background"></div>
-      <div class="modal-content is-tiny">
-        
-        <div class="card">
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img src="https://source.unsplash.com/hLyd1LukQ7E" alt="butterfly"/>
-            </figure>
-          </div>
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-48x48">
-                  <img src="http://www.radfaces.com/images/avatars/linda-barret.jpg" alt="linda barret avatar"/>
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-4">Jane Doe</p>
-                <p class="subtitle is-6">@jane_doe</p>
-              </div>
-            </div>
-            <div class="content">
-              Laum Ipsum junkah potatoes bookin' it. Moosetown rig up I'm tellin' you way up north bookin' it can't get theyah from heeyah native bean suppah whawf Powrtland Museum of Aht, back woods hawsun around the pit mummah Yessah, mummah muckle riyht on'ta her
-              Bean's dinnahbucket bub geez bud sumpin' fierce ayuhpawt Bangah naw, Powrtland Museum of Aht down cellah sumpin' fierce hoppa bub If you can't stand the wintah you don't deserve the summah slower than molasses going uphill in January.
-              Sgn'wahl shoggor hrii uaaah R'lyeh uh'e k'yarnak Hastur hupadgh li'hee, hai f'nilgh'ri nilgh'ri n'ghftor ngftaghu vulgtlagln h'hrii throd Nyarlathotep lloig, naflsll'ha nnnsll'ha athg y-ebunma goka chtenff ehyeog cehye. Zhro y'hah
-              nogoth phlegeth stell'bsna orr'e ph'Hastur gnaiih throd, uln ya lw'nafh mg nar'luh li'hee wgah'n, sgn'wahl mg nakadishtu chlirgh hupadgh tharanak h'gnaiih.
-              <a>@bulmaio</a>.
-              <a href="#">#css</a>
-              <a href="#">#responsive</a>
-              <br/>
-              <time datetime="2018-02-02">12:45 AM - 20 May 2018</time>
-            </div>
-          </div>
-        </div>
-       
-      </div>
-      <button class="modal-close is-large" aria-label="close"></button>
-    </div>
-   
-    <div id="modal-image2" class="modal modal-fx-3dSlit">
-      <div class="modal-background"></div>
-      <div class="modal-content is-huge is-image">
-    
-        <img src="https://source.unsplash.com/RWnpyGtY1aU" alt="image"/>
-      
-      </div>
-      <button class="modal-close is-large" aria-label="close"></button>
-    </div>
-  
-    <div id="modal-image4" class="modal modal-fx-3dSlit">
-      <div class="modal-background"></div>
-      <div class="modal-content is-huge is-image">
-      
-        <img src="https://source.unsplash.com/hLyd1LukQ7E" alt="butterfly"/>
-        
-      </div>
-      <button class="modal-close is-large" aria-label="close"></button>
-    </div>
-    
-    <div id="modal-image" class="modal modal-fx-superScaled">
-      <div class="modal-background"></div>
-      <div class="modal-content  is-image">
-       
-        <img src="https://i.imgsafe.org/ba/baa924a5e3.png" alt="Placeholder image"/>
-          <img src="https://source.unsplash.com/zFrUz_tNjCY" alt="placeholder"/>
-        
-      </div>
-      <button class="modal-close is-large" aria-label="close"></button>
-    </div>
-    <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="../js/wild.js"></script>
+  handlerAddProduct(indexCart, indexProduct){
+    var statusCopy = Object.assign({}, this.state);
+    if (statusCopy.products[indexProduct].status !== 0) {
+      statusCopy.cart[indexCart].total += statusCopy.cart[indexCart].price
+      statusCopy.cart[indexCart].order += 1
+      statusCopy.products[indexProduct].status -= 1
+      this.setState(statusCopy)
+      this.sumProducts(statusCopy.cart)
+      this.sumTotal(statusCopy.cart)
+    } else {
+      alert('Producto inexistente')
+    }
+  }
 
-</div>
+  handlerRemoveProduct(productId) {
+    let product = this.state.products.find(p => p.id === productId);
+    let indexProduct = this.state.products.findIndex(x => x.id === product.id)
+    let cart = this.state.cart.find(p => p.id === productId)
+    let indexCart = this.state.cart.findIndex(x => x.id === cart.id)
+
+    var statusCopy = Object.assign({}, this.state);
+    if(statusCopy.cart[indexCart].total === statusCopy.cart[indexCart].price ){
+      indexCart !== -1 && statusCopy.cart.splice( indexCart, 1 );
+      this.setState(statusCopy)
+      alert('El producto fue eliminado del carrito de compras')
+    } else {
+      statusCopy.cart[indexCart].total -= statusCopy.cart[indexCart].price
+      statusCopy.products[indexProduct].status += 1
+      statusCopy.cart[indexCart].order -= 1
+      statusCopy.total -= 1
+      statusCopy.sum -= statusCopy.cart[indexCart].price
+      this.setState(statusCopy)
+    }
+  }
+
+  handleSaveProduct(productId) {
+    let product = this.state.products.find(p => p.id === productId);
+    let indexProduct = this.state.products.findIndex(x => x.id === product.id)
+
+    var productCart = {
+      id: product.id,
+      name: product.name,
+      img: product.picture,
+      price: product.price,
+      order: 1,
+      total: product.price
+    }
+
+    var exist = this.state.cart.find(p => p.id === productId)
+    if (undefined !== exist && exist !== null) {
+      let indexCart = this.state.cart.findIndex(x => x.id === exist.id)
+      this.handlerAddProduct(indexCart, indexProduct)
+    }else{
+      var statusCopy = Object.assign({}, this.state);
+      statusCopy.products[indexProduct].status -= 1
+      this.sumProducts(statusCopy.cart)
+      this.sumTotal(statusCopy.cart)
+      this.setState({
+        cart: this.state.cart.concat([productCart]),
+        statusCopy
+      })
+    }
+  }
+
+  handlerOpenOrder(event) {
+    event.preventDefault()
+    this.setState({ openOrder: true })
+  }
+
+  renderOpenOrder() {
+    if (this.state.openOrder) {
+      return (
+        <Order
+          sum={this.state.sum}
+          onClearCart={this.handlerClearCart}
+        />
+      )
+    }
+  }
+
+  render() {
+    return (
+      <Container className={style.root}>
+        <Menu/>
+        <Grid>
+          <Grid.Column width={12}>
+            <ProductList
+              products={this.state.products}
+              onSaveProduct={this.handleSaveProduct}
+              onIncrementProduct={this.handleSaveProduct}
+              onRemoveProduct={this.handlerRemoveProduct}
+            />
+          </Grid.Column>
+          <Grid.Column width={4}>
+            <CartList
+              items={this.state.cart}
+              total={this.state.total}
+              onOpenOrder={this.handlerOpenOrder}
+            />
+            {this.renderOpenOrder()}
+          </Grid.Column>
+        </Grid>
+      </Container>
     )
   }
 }
 
 export default Shop;
-

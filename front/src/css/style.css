@@ -1,34 +1,4 @@
-/* Namari Landing Page v.1.1.0 Style Index - a free landing page by shapingrain.com
 
-1. Default and Reset styles
-- 1.1 Input Elements
-2. Global elements
-- 2.1 Header
-- 2.2 Logo
-- 2.3 Buttons
-- 2.4 Navigation
-- 2.5 Social Elements
-- 2.6 Images
-3. Fonts and Headings
-4. Banner
-- 4.1 SignUp Form
-5. Content Elements
-- 5.1 Icons
-- 5.2 Parallax Elements
-- 5.3 Divider
-6. Landing Page Sections
-- 6.1 Features
-- 6.2 Testimonials
-- 6.3 Gallery
-- 6.4 Video
-- 6.5 Clients
-- 6.6 Pricing Table
-7. Footer
-
-
-/*------------------------------------------------------------------------------------------*/
-/* 1. Defaults & Reset of specific styles across browsers */
-/*------------------------------------------------------------------------------------------*/
 
 *, *:before, *:after {
     -webkit-box-sizing: border-box;
@@ -80,7 +50,6 @@ figure {
     margin: 0;
 }
 
-/* Page Border */
 
 .page-border {
     position: fixed;
@@ -134,8 +103,6 @@ figure {
 }
 
 
-/* --------- 1.1 Input Elements ---------- */
-
 input, textarea {
     border: 1px solid #e1e1e1;
     padding: 10px;
@@ -175,16 +142,11 @@ input:focus, textarea:focus {
     outline: none;
 }
 
-/*------------------------------------------------------------------------------------------*/
-/* 2. Layout Elements */
-/*------------------------------------------------------------------------------------------*/
 
 section {
     clear: both;
     overflow: hidden;
 }
-
-/* Rows and Columns */
 
 .row {
     max-width: 1245px;
@@ -209,7 +171,6 @@ section {
     padding-bottom: 85px !important;
 }
 
-/* Targets all elements */
 
 [class*='col-'] {
     float: left;
@@ -220,7 +181,6 @@ section {
     padding: 0;
 }
 
-/* Clearfix */
 
 .clearfix:after {
     content: "";
@@ -228,7 +188,6 @@ section {
     clear: both;
 }
 
-/* Main Widths */
 
 .col-1 {
     width: 100%;
@@ -290,7 +249,7 @@ section {
     width: 90%;
 }
 
-/* Golden Ratio */
+
 .col-61 {
     width: 61.8%;
 }
@@ -299,7 +258,6 @@ section {
     width: 38.2%;
 }
 
-/* --------- 2.1 Header --------- */
 
 #header {
     height: 71px !important;
@@ -327,7 +285,6 @@ section {
     margin: 0;
 }
 
-/* --------- 2.2 Logo ---------- */
 
 #logo {
     float: left;
@@ -371,13 +328,11 @@ section {
     display: inline-block;
 }
 
-/* --------- 2.3 Buttons ---------- */
 
 .call-to-action {
     padding: 35px 0 35px 0;
 }
 
-/*Style*/
 
 .button {
     font-size: 16px;
@@ -391,7 +346,6 @@ section {
     border-style: solid;
 }
 
-/* Play Button */
 
 #video-section {
     position:relative;
@@ -474,9 +428,6 @@ section {
     color: #fff;
 }
 
-
-/* --------- 2.4 Navigation ---------- */
-
 #header {
     font-size: 13px;
 }
@@ -501,7 +452,6 @@ section {
     opacity: 0.6;
 }
 
-/*Navigation Solid*/
 
 #header.nav-solid [class*='col-'] {
     padding: 0 20px;
@@ -527,7 +477,6 @@ section {
     opacity: 1;
 }
 
-/* Social Elements when Solid*/
 
 #header.nav-solid .social-icons a {
     -webkit-transition: all 0.3s ease-out;
