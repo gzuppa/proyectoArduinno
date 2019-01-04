@@ -1,6 +1,6 @@
 import axios from 'axios';
-
-const base_url = "http://localhost:3000/api";
+//const base_url = ""
+const base_url = "http://localhost:3000";
 
 export const login = (auth, history) => {
     axios.post(`${base_url}/auth/login`, auth)
@@ -12,6 +12,17 @@ export const login = (auth, history) => {
         .catch(err => {
             console.error(err);
         })
+};
+
+export const signup = (auth, history) => {
+  axios.post(`${base_url}/auth/signup`, auth)
+      .then(res => {
+          console.log("res",res)
+          history.push("/login")
+      })
+      .catch(err => {
+          console.error("+++>", err.response.data.msg);
+      })
 };
 
 export const getPosts = (token) => {

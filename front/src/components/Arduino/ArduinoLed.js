@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import {five, board, led} from 'johnny-five';
+/*import {five, board, led} from 'johnny-five';*/
 import Nav from '../Nav/Nav'
 import ArduionoUno from '../../images/arduinouno.jpg';
 import Leds from '../../images/leds.png';
@@ -14,6 +14,9 @@ import FourIcon from '../../images/numbers/four.png'
 import FiveIcon from '../../images/numbers/five.png'
 import SixIcon from '../../images/numbers/six.png'
 import codeLed from '../../images/ejemplos/codeledarduino.png'
+import Bonus from '../../images/bonus.png'
+import firmata from 'firmata'
+
 
 class ArduinoLed extends Component{
 
@@ -23,9 +26,32 @@ class ArduinoLed extends Component{
 
     }
 
-    //FUNCIONES AQUI
-
   } 
+
+  handleClick = () =>{
+
+    const Board = require('firmata');
+    Board.requestPort(function(err,port) {
+      if (err) {
+      console.log(err);
+      return;
+      }
+    const board = new Board(port.comName);
+      board.on('ready', function(){
+      board.pinMode(13, board.MODES.OUTPUT);
+    let ledOn = true;
+      setInterval(function(){
+      if (ledOn){
+        console.log("ON");
+        board.digitalWrite(13, board.HIGH);
+      } else {
+        board.digitalWrite(13, board.LOW);
+      }
+      ledOn = !ledOn
+    },1000)
+  })
+})
+}
 
   render(){
     return(
@@ -333,6 +359,29 @@ class ArduinoLed extends Component{
     </div>
   </div>
 </article>
+
+<article class="media section-subtitle">
+  <figure class="media-left">
+    <p class="image is-64x64">
+      <img src={Bonus}/>
+    </p>
+  </figure>
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong>Controla el LED con un botón</strong> <small>Manejando el blink del LED desde la Web</small> 
+        <br/>
+        Todo lo que aprendimos en esta lección puedes insertarlo en una p[agina Web. Exactamente el mismo procedimiento que realizamos con el montaje del servidor
+        y la codificación está integrado en el siguiente botón. Conecta tu placa Arduino al puerto USB, inserta el LED en los PINs que establecimos, da click en
+        el botón y observarás como funciona.
+
+        <button class="button is-success is-large is-fullwidth is-rounded" onClick={this.handleClick}>ENCIENDETE ARDUINO!</button>
+
+      </p>
+    </div>
+  </div>
+</article>
+
 
 </div>
                    

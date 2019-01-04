@@ -41,7 +41,7 @@ handleSubmit = (e) => {
 				<span class="login100-form-title p-b-41">
 					¡Bienvenido!
 				</span>
-				<form class="login100-form validate-form p-b-33 p-t-5">
+				<form  onSubmit={this.handleSubmit} class="login100-form validate-form p-b-33 p-t-5">
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
 						<input class="input100" onChange={this.handleChange}
@@ -60,7 +60,7 @@ handleSubmit = (e) => {
 					</div>
 
 					<div class="container-login100-form-btn m-t-32">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" type="submit">
 							Login
 						</button>
 					</div>
