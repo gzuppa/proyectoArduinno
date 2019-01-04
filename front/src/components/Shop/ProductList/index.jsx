@@ -7,7 +7,7 @@ function ProductList(props) {
   return (
     <Segment>
       <Grid>
-        <Grid.Row columns={4}>
+        <Grid.Row columns={3}>
           {props.products.map(p => {
             return (
               <Grid.Column>

@@ -477,7 +477,6 @@ section {
     opacity: 1;
 }
 
-
 #header.nav-solid .social-icons a {
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
@@ -490,8 +489,6 @@ section {
     opacity: 1;
     color: #e4473c;
 }
-
-/* Responsive Nav Styling */
 
 #nav-trigger {
     display: none;
@@ -608,8 +605,6 @@ nav#nav-mobile a:hover {
     opacity: 1;
 }
 
-/* --------- 2.5 Social Elements ---------- */
-
 #header .col-4 {
     text-align: right;
 }
@@ -637,10 +632,6 @@ nav#nav-mobile a:hover {
     margin-top: 27px;
 }
 
-/* --------- 2.6 Images ---------- */
-
-/*Alignment*/
-
 img {
     vertical-align: top;
 }
@@ -663,9 +654,6 @@ a img:hover {
     opacity: 0.7;
 }
 
-/*------------------------------------------------------------------------------------------*/
-/* 3. Fonts */
-/*------------------------------------------------------------------------------------------*/
 
 h1 {
     padding: 20px 0;
@@ -691,7 +679,6 @@ h6 {
     padding: 7px 0;
 }
 
-/* Text Alignment */
 
 .text-left {
     text-align: left;
@@ -705,7 +692,6 @@ h6 {
     text-align: right;
 }
 
-/* Section Headings */
 
 .section-heading {
     padding: 0 0 15px 0;
@@ -723,10 +709,6 @@ h6 {
     letter-spacing: 2px;
     padding-bottom: 0;
 }
-
-/*------------------------------------------------------------------------------------------*/
-/* 4. Banner */
-/*------------------------------------------------------------------------------------------*/
 
 #banner {
     background-size: cover;
@@ -750,20 +732,9 @@ h6 {
 }
 
 
-
-/*------------------------------------------------------------------------------------------*/
-/* 5. Content Elements */
-/*------------------------------------------------------------------------------------------*/
-
-/* --------- 5.1 Icons ---------- */
-
-/*Font Icon sizes*/
-
 .fa-1x {
     font-size: 15px !important;
 }
-
-/*Icon Block*/
 
 .icon-block {
     position: relative;
@@ -782,7 +753,6 @@ h6 {
     margin-top: 0;
 }
 
-/* Icon Left*/
 
 .icon-left .icon {
     left: 15;
@@ -792,8 +762,6 @@ h6 {
     padding-left: 53px;
 }
 
-/* Icon Right */
-
 .icon-right .icon {
     right: 15;
 }
@@ -801,8 +769,6 @@ h6 {
 .icon-right .icon-block-description {
     padding-right: 53px;
 }
-
-/* Icon Above */
 
 .icon-top {
     display: block;
@@ -817,13 +783,9 @@ h6 {
     padding-top: 25px;
 }
 
-/* --------- 5.2 Parallax Elements ---------- */
-
 .banner-parallax-1, .banner-parallax-2, .banner-parallax-3 {
     min-height: 350px;
 }
-
-/* --------- 5.3 Divider ---------- */
 
 .divider {
     position: relative;
@@ -853,17 +815,9 @@ h6 {
     color: #e1e1e1;
 }
 
-/*------------------------------------------------------------------------------------------*/
-/* 6. Landing Page Sections */
-/*------------------------------------------------------------------------------------------*/
-
-/* --------- 6.1 Introduction ---------- */
-
 .introduction img.featured {
     padding: 55px 0 0 0;
 }
-
-/* --------- 6.2 Features ---------- */
 
 .features.row {
     padding-left: 5%;
@@ -873,8 +827,6 @@ h6 {
 .features div:nth-child(4) {
     clear: both;
 }
-
-/* --------- 6.3 Testimonials ---------- */
 
 .testimonial {
     padding: 15px;
@@ -893,8 +845,6 @@ blockquote {
     padding-top: 12px;
 }
 
-/* Style Classic - Avatar above Testimonial */
-
 .testimonial.classic img {
     display: inline-block;
     margin-bottom: 25px;
@@ -912,8 +862,6 @@ blockquote {
     margin: 10px auto 15px auto;
 }
 
-/* Style Big */
-
 .testimonial.bigtest {
     padding-top: 0;
 }
@@ -921,8 +869,6 @@ blockquote {
 .testimonial.bigtest q {
     font-size: 22px;
 }
-
-/* --------- 6.4 Gallery ---------- */
 
 #gallery img {
     max-height: 300px;
@@ -971,45 +917,28 @@ blockquote {
     left: 50%;
 }
 
-/**
- * Featherlight – ultra slim jQuery lightbox
- * Version 1.3.3 - http://noelboss.github.io/featherlight/
- *
- * Copyright 2015, Noël Raoul Bossart (http://www.noelboss.com)
- * MIT Licensed.
-**/
 @media all {
     .featherlight {
         display: none;
 
-        /* dimensions: spanning the background from edge to edge */
         position: fixed;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
-        z-index: 2147483647; /* z-index needs to be >= elements on the site. */
-
-        /* position: centering content */
+        z-index: 2147483647; 
         text-align: center;
-
-        /* insures that the ::before pseudo element doesn't force wrap with fixed width content; */
         white-space: nowrap;
-
-        /* styling */
         cursor: pointer;
         background: #333;
-        /* IE8 "hack" for nested featherlights */
         background: rgba(0, 0, 0, 0);
     }
 
-    /* support for nested featherlights. Does not work in IE8 (use JS to fix) */
     .featherlight:last-of-type {
         background: rgba(0, 0, 0, 0.8);
     }
 
     .featherlight:before {
-        /* position: trick to center content vertically */
         content: '';
         display: inline-block;
         height: 100%;
@@ -1018,50 +947,31 @@ blockquote {
     }
 
     .featherlight .featherlight-content {
-
-        /* position: centering vertical and horizontal */
         text-align: left;
         vertical-align: middle;
         display: inline-block;
-
-        /* dimensions: cut off images */
         overflow: auto;
         padding: 25px 0;
         border-bottom: 25px solid transparent;
-
-        /* dimensions: handling small or empty content */
         min-width: 30%;
-
-        /* dimensions: handling large content */
         margin-left: 5%;
         margin-right: 5%;
         max-height: 95%;
-
-        /* styling */
         cursor: auto;
-
-        /* reset white-space wrapping */
         white-space: normal;
     }
 
-    /* contains the content */
     .featherlight .featherlight-inner {
-        /* make sure its visible */
         display: block;
     }
 
     .featherlight .featherlight-close-icon {
-        /* position: centering vertical and horizontal */
         position: absolute;
         z-index: 9999;
         top: 25px;
         right: 25px;
-
-        /* dimensions: 25px x 25px */
         line-height: 25px;
         width: 25px;
-
-        /* styling */
         cursor: pointer;
         text-align: center;
         color: #fff;
@@ -1079,38 +989,32 @@ blockquote {
     }
 
     .featherlight .featherlight-image {
-        /* styling */
         max-height: 100%;
         max-width:100%;
     }
 
     .featherlight-iframe .featherlight-content {
-        /* removed the border for image croping since iframe is edge to edge */
         border-bottom: 0;
         padding: 0;
     }
 
     .featherlight iframe {
-        /* styling */
         border: none;
     }
 }
 
-/* handling phones and small screens */
+
 @media only screen and (max-width: 1024px) {
     .featherlight .featherlight-content {
-        /* dimensions: maximize lightbox with for small screens */
         margin-left: 10px;
         margin-right: 10px;
         max-height: 98%;
-
         padding: 10px 10px 0;
         border-bottom: 10px solid transparent;
     }
 
 }
 
-/* Gallery Styling */
 @media all {
     .featherlight-next,
     .featherlight-previous {
@@ -1123,14 +1027,12 @@ blockquote {
         bottom: 0;
         left: 80%;
         cursor: pointer;
-        /* preventing text selection */
         -webkit-touch-callout: none;
         -webkit-user-select: none;
         -khtml-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-        /* IE9 hack, otherwise navigation doesn't appear */
         background: rgba(0, 0, 0, 0);
         -webkit-transition: all 0.3s ease-out;
         -moz-transition: all 0.3s ease-out;
@@ -1152,8 +1054,6 @@ blockquote {
         width: 100%;
         font-size: 80px;
         line-height: 80px;
-
-        /* center vertically */
         margin-top: -40px;
         color: #fff;
         font-style: normal;
@@ -1181,13 +1081,11 @@ blockquote {
         opacity: 1;
     }
 
-    /* Hide navigation while loading */
     .featherlight-loading .featherlight-previous, .featherlight-loading .featherlight-next {
         display: none;
     }
 }
 
-/* Always display arrows on touch devices */
 @media only screen and (max-device-width: 1024px) {
     .featherlight-next:hover,
     .featherlight-previous:hover {
@@ -1200,7 +1098,6 @@ blockquote {
     }
 }
 
-/* handling phones and small screens */
 @media only screen and (max-width: 1024px) {
     .featherlight-next,
     .featherlight-previous {
@@ -1221,8 +1118,6 @@ blockquote {
     }
 }
 
-/* --------- 6.5 Video ---------- */
-
 #video-box {
     color:#fff;
     position:relative;
@@ -1232,9 +1127,9 @@ blockquote {
 
 .video_container, .easyContainer {
     position: relative;
-    padding-bottom: 56.25%; /* 16/9 ratio */
+    padding-bottom: 56.25%;
     margin: 0;
-    padding-top: 0; /* IE6 workaround*/
+    padding-top: 0; 
     height: 0;
     overflow: hidden;
 }
@@ -1327,7 +1222,6 @@ blockquote {
     cursor: pointer;
 }
 
-/* --------- 6.6 Clients ---------- */
 
 #clients a {
     display: block;
@@ -1372,79 +1266,6 @@ blockquote {
     display: inline-block;
 }
 
-/* --------- 6.7 Pricing Table ---------- */
-
-.pricing-block-content {
-    background: #fff;
-    padding: 25px 0 25px 0;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);
-    transition: all 0.2s ease-in-out 0s;
-    position: relative;
-    border: 10px solid #fff;
-}
-
-
-.pricing-block ul {
-    list-style: none;
-    margin: 25px 0 25px 0;
-}
-
-.pricing-block li {
-    padding: 14px 0;
-    border-bottom: 1px dotted #e1e1e1;
-}
-
-.pricing-block li:last-of-type {
-    border:none;
-}
-
-.pricing-block h3 {
-    font-size:17px;
-    text-transform:uppercase;
-    padding-bottom:0;
-}
-
-.pricing-sub {
-    font-style: italic;
-    color:#ccc;
-    margin:0 0 25px 0;
-}
-
-/*Price*/
-
-.pricing {
-    background: #f5f5f5;
-    padding: 25px;
-    position: relative;
-}
-
-.price {
-    display: inline-block;
-    font-size: 62px;
-    font-weight: 700;
-    position: relative;
-}
-
-.price span {
-    position: absolute;
-    top: 0;
-    left: -20px;
-    font-size: 22px;
-}
-
-.pricing  p {
-    font-style:italic;
-    color:#b4b4b4;
-    line-height:auto;
-    margin:0;
-}
-
-
-
-/*------------------------------------------------------------------------------------------*/
-/* 7. Footer */
-/*------------------------------------------------------------------------------------------*/
-
 #landing-footer {
     clear: both;
 }
@@ -1465,8 +1286,6 @@ blockquote {
 #landing-footer li {
     display: inline-block;
 }
-
-/* Scroll Up */
 
 #scrollUp {
     bottom: 15px;
@@ -1504,34 +1323,6 @@ blockquote {
     opacity: 1;
 }
 
-/*Preloader*/
-
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #fff; /* change if the mask should have another color then white */
-    z-index: 99999; /* makes sure it stays on top */
-}
-
-#status {
-    width: 110px;
-    height: 110px;
-    position: absolute;
-    left: 50%; /* centers the loading animation horizontally one the screen */
-    top: 50%; /* centers the loading animation vertically one the screen */
-    background-position: center;
-    margin: -55px 0 0 -55px; /* is width and height divided by two */
-    text-align: center;
-}
-
-/*!
- * Load Awesome v1.1.0 (http://github.danielcardoso.net/load-awesome/)
- * Copyright 2015 Daniel Cardoso <@DanielCardoso>
- * Licensed under MIT
- */
 .la-ball-triangle-path,
 .la-ball-triangle-path > div {
     position: relative;
@@ -1622,9 +1413,6 @@ blockquote {
     height: 30px;
 }
 
-/*
- * Animations
- */
 @-webkit-keyframes ball-triangle-path-ball-one {
     0% {
         -webkit-transform: translate(0, 220%);
@@ -2021,12 +1809,6 @@ blockquote {
     }
 }
 
-/*------------------------------------------------------------------------------------------*/
-/* Responsive Elements */
-/*------------------------------------------------------------------------------------------*/
-
-/* =Media Queries for Nav
-===============================*/
 @media all and (max-width: 1024px) {
     #nav-trigger {
         display: block;
@@ -2049,8 +1831,6 @@ blockquote {
     }
 }
 
-/* Landscape mobile & down
-===============================*/
 @media (max-width: 480px) {
 
     #wrapper {
@@ -2075,7 +1855,6 @@ blockquote {
         padding-left: 0;
     }
 
-    /*-----------------Header Elements-----------------*/
     #header .row {
         padding: 0 15px !important;
     }
@@ -2084,12 +1863,10 @@ blockquote {
         padding: 0;
     }
 
-    /*Logo*/
     #logo h2 {
         padding: 0;
     }
 
-    /* Social */
     #header aside {
         clear: both;
         padding: 0;
@@ -2103,19 +1880,14 @@ blockquote {
         padding-top: 85px !important;
     }
 
-    /*-----------------Sections-----------------*/
-
-    /* Call to Action*/
     .call-to-action {
         padding-bottom: 25px;
     }
 
-    /* Video */
     .slvj-lightbox iframe, .slvj-lightbox object, .slvj-lightbox embed {
         height: 270px !important;
     }
 
-    /* Footer */
     #landing-footer #copyright {
         float: left;
         width: 50%;
@@ -2126,7 +1898,6 @@ blockquote {
         width: 50%;
     }
 
-    /*-----------------Typography-----------------*/
     h1 {
         font-size: 38px;
     }
@@ -2135,15 +1906,12 @@ blockquote {
         font-size: 48px;
     }
 
-    /* Hide Elements */
     a#scrollUp {
         display: none !important;
     }
 
 }
 
-/* Mobile to Tablet Portrait
-===============================*/
 @media (min-width: 480px) and (max-width: 767px) {
 
     #wrapper {
@@ -2168,7 +1936,6 @@ blockquote {
         width: 50%;
     }
 
-    /*-----------------Header Elements-----------------*/
     #header .row {
         padding: 0 !important;
     }
@@ -2195,7 +1962,6 @@ blockquote {
         padding-top: 85px !important;
     }
 
-    /*Navigation*/
     nav#nav-mobile ul {
         margin-left: -40px;
         margin-right: -40px;
@@ -2203,14 +1969,11 @@ blockquote {
         padding-right: 20px;
     }
 
-    /*-----------------Sections-----------------*/
 
-    /* Video */
     .slvj-lightbox iframe, .slvj-lightbox object, .slvj-lightbox embed {
         height: 370px !important;
     }
 
-    /* Footer */
     #landing-footer #copyright {
         float: left;
         width: 50%;
@@ -2223,8 +1986,6 @@ blockquote {
 
 }
 
-/* Landscape Tablet to Desktop
-===============================*/
 @media (min-width: 768px) and (max-width: 1024px) {
 
     #wrapper {
@@ -2240,7 +2001,6 @@ blockquote {
         padding-top: 45px !important;
     }
 
-    /*-----------------Header Elements-----------------*/
     #header aside {
         display: inline-block;
         position: absolute;
@@ -2259,7 +2019,6 @@ blockquote {
         padding-top: 6px;
     }
 
-    /*Navigation*/
     nav#nav-mobile ul {
         margin-left: -40px;
         margin-right: -40px;
@@ -2267,9 +2026,7 @@ blockquote {
         padding-right: 20px;
     }
 
-    /*-----------------Sections-----------------*/
 
-    /* Video */
     .slvj-lightbox iframe, .slvj-lightbox object, .slvj-lightbox embed {
         height: 432px !important;
     }

@@ -6,7 +6,7 @@ class Navigation extends Component {
 
   render() {
     return(
-      <Segment textAlign='right' clearing style={{ marginTop: 15}}>
+      <Segment textAlign='right' clearing style={{ marginTop: 120}}>
         <SearchForm/>
       </Segment>
     )

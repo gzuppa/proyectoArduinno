@@ -8,7 +8,7 @@ function Product(props) {
     <Card style={{ marginTop: 15 }}>
       <Image size="small" src={props.picture}  />
       <Card.Content>
-        <Card.Header style={{fontSize: 15}}>{props.name}</Card.Header>
+        <Card.Header style={{fontSize: 13}}>{props.name}</Card.Header>
         <Card.Meta>
           <Format number={props.price}/>
         </Card.Meta>
@@ -25,7 +25,7 @@ function Product(props) {
           floated='right'
           onClick={props.onSaveProduct}
         >
-          Agregar al carrito
+          Buy
         </Button>
       </Card.Content>
       <Card.Content extra>

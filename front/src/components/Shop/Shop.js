@@ -7,6 +7,7 @@ import ProductList from './ProductList'
 import CartList from './CartList'
 import Order from './Order'
 import style from './App.css'
+import Robotin from '../../images/roboshop.png'
 
 class Shop extends Component {
   constructor(props) {
@@ -18,104 +19,56 @@ class Shop extends Component {
       products: [
         {
           id: 1,
-          name: 'Nikon D5500 24.2 Mp',
-          picture: 'https://http2.mlstatic.com/camara-D_Q_NP_100101-MLM20255371968_032015-X.webp',
-          price: 12346,
+          name: 'Placa básica Arduino Uno con USB',
+          picture: 'https://cdn.shopify.com/s/files/1/0925/9692/products/Screen_Shot_2018-03-20_at_3.58.21_PM_1024x1024.png?v=1544898674',
+          price: 280,
           datails: 'Compra Protegida, recibe el producto que esperabas o te devolvemos tu dinero.',
-          marca: 'Nikon',
-          status: 5,
+          marca: 'Arduino',
+          status: 22,
         },
         {
           id: 2,
-          name: 'Sony Dsc-h300 20 Mp',
-          picture: 'https://http2.mlstatic.com/camara-D_Q_NP_621585-MLM25970442208_092017-X.webp',
-          price: 3938,
+          name: 'Paquete de 50 Leds de colores surtidos sencillos',
+          picture: 'https://static4.depositphotos.com/1003648/332/i/950/depositphotos_3323301-stock-photo-seven-leds-of-different-colour.jpg',
+          price: 60,
           datails: 'Compra Protegida, recibe el producto que esperabas o te devolvemos tu dinero.',
-          marca: 'Sony',
-          status: 6,
+          marca: 'Basics',
+          status: 68,
         },
         {
           id: 3,
-          name: 'Fujifilm X-t10 40.0 Mp',
-          picture: 'https://http2.mlstatic.com/camara-D_Q_NP_997939-MLM25733136676_072017-X.webp',
-          price: 18999,
+          name: 'Arduino Nano V3.0',
+          picture: 'https://www.iberobotics.com/wp-content/uploads/2017/11/Arduino_nano_V3.0_atmega328_compatible-2.jpg',
+          price: 150,
           datails: 'Compra Protegida, recibe el producto que esperabas o te devolvemos tu dinero.',
-          marca: 'Fujifilm',
-          status: 2,
+          marca: 'Arduino',
+          status: 12,
         },
         {
           id: 4,
-          name: 'Reflex Canon Eos 30 ',
-          picture: 'https://http2.mlstatic.com/camara-D_Q_NP_743505-MLM25028787002_082016-X.webp',
-          price: 1000,
+          name: 'Medidor Ultrasónico ',
+          picture: 'https://http2.mlstatic.com/hc-sr04-hc04-sensor-ultrasonico-ultrasonido-arduino-itytarg-D_NQ_NP_851064-MLA26433687632_112017-F.webp',
+          price: 80,
           datails: 'Compra Protegida, recibe el producto que esperabas o te devolvemos tu dinero.',
-          marca: 'Canon',
+          marca: 'Arduino',
           status: 6,
         },
         {
           id: 5,
-          name: 'Holster Camera Case ',
-          picture: 'https://images-na.ssl-images-amazon.com/images/I/91cMeS6xLHL._SX522_.jpg',
-          price: 328,
-          marca: 'Amazon',
+          name: 'Motor DC Dual circuito independiente',
+          picture: 'https://static4.tme.eu//products_pics/1/2/d/12d1d4c012fb0c06eae61b33a38acf3c/232732.jpg',
+          price: 75,
+          marca: 'Elektronix',
           status: 10,
         },
         {
           id: 6,
-          name: 'Olympus M. 40-150mm ',
-          picture: 'https://images-na.ssl-images-amazon.com/images/I/81vy-AiCWSL._AC_UL160_SR160,160_.jpg',
-          price: 2733,
+          name: 'Kit de iniciación arduino, motores, cables y accesorios',
+          picture: 'https://sgfm.elcorteingles.es/SGFM/dctm/MEDIA03/201612/12/00102723702888____1__640x640.jpg',
+          price: 720,
           marca: 'Olympus',
           status: 4,
         },
-        {
-          id: 7,
-          name: 'Tripié ligero ',
-          picture: 'https://images-na.ssl-images-amazon.com/images/G/33/aplusautomation/vendorimages/2ad656e6-6b25-48fd-af65-0a113979bc54.jpg._CB293876631__SR300,300_.jpg',
-          price: 372,
-          marca: 'Amazon',
-          status: 2,
-        },
-        {
-          id: 8,
-          name: 'Fujinon XF10-24MMF4 ',
-          picture: 'https://images-na.ssl-images-amazon.com/images/I/81tbbvcsJIL._AC_UL160_SR160,160_.jpg',
-          price: 25023,
-          marca: 'Fujinon',
-          status: 4,
-        },
-        {
-          id: 9,
-          name: 'Fujifilm X-T2 Mirrorless ',
-          picture: 'https://images-na.ssl-images-amazon.com/images/I/81CUJvIrFML._AC_UL160_SR160,160_.jpg',
-          price: 50399,
-          marca: 'Fujifilm',
-          status: 3,
-        },
-        {
-          id: 10,
-          name: 'LUMIX G Lens, 25mm',
-          picture: 'https://images-na.ssl-images-amazon.com/images/I/71dTWmH4vxL._SL1500_.jpg',
-          price: 3262,
-          marca: 'Panasonic',
-          status: 4,
-        },
-        {
-          id: 11,
-          name: 'Olympus OM-D E-M5 ',
-          picture: 'https://images-na.ssl-images-amazon.com/images/I/918N6QYcTjL._SL1500_.jpg',
-          price: 18688,
-          marca: 'Olympus',
-          status: 3,
-        },
-        {
-          id: 12,
-          name: 'Fujifilm X-T20 ',
-          picture: 'https://images-na.ssl-images-amazon.com/images/I/91in%2BYvDGtL._AC_UL160_SR160,160_.jpg',
-          price: 32699,
-          marca: 'Fujifilm',
-          status: 10,
-        }
       ],
       cart: [],
     }
@@ -229,8 +182,12 @@ class Shop extends Component {
 
   render() {
     return (
+    
       <Container className={style.root}>
+      <Nav/>
+  
         <Menu/>
+        
         <Grid>
           <Grid.Column width={12}>
             <ProductList
@@ -247,6 +204,7 @@ class Shop extends Component {
               onOpenOrder={this.handlerOpenOrder}
             />
             {this.renderOpenOrder()}
+            <img src={Robotin}/>
           </Grid.Column>
         </Grid>
       </Container>
