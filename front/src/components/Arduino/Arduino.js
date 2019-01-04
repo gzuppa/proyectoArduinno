@@ -50,9 +50,9 @@ class Arduino extends Component{
         </li>
 
         <li>
-            <a href="#">
+            <Link to="/arduino/arduinolcd">
                 <img src={ArduinoLcd} alt="Arduinolcd" />
-            </a>
+            </Link>
             <h2><a href="#">Como programar una pantalla LCD con Arduino</a></h2>
             <p>En esta lección podrás programar una pantalla LCD para escribir cualquier texto, aplicar intermitencias e incluso hacer un
               pequeño minijuego. Como en la anterior lección también te enseñaremos a programar el código.

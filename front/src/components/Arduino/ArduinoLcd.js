@@ -2,18 +2,17 @@ import React, { Component } from 'react';
 /*import {five, board, led} from 'johnny-five';*/
 import Nav from '../Nav/Nav'
 import ArduionoUno from '../../images/arduinouno.jpg';
-import Leds from '../../images/leds.png';
-import Dupont from '../../images/dupont.jpeg';
+import Potenciometro from '../../images/Potenciometro.jpeg';
 import Protoboard from '../../images/proto.png';
 import OneIcon from '../../images/numbers/one.png'
 import TwoIcon from '../../images/numbers/two.png'
 import Firmata from '../../images/ejemplos/sketchfirmata.png'
 import ThreeIcon from '../../images/numbers/three.png'
-import LedRojo from '../../images/ejemplos/arduinoledrojo.png'
+import Lcd from '../../images/LCD.jpg'
 import FourIcon from '../../images/numbers/four.png'
 import FiveIcon from '../../images/numbers/five.png'
 import SixIcon from '../../images/numbers/six.png'
-import codeLed from '../../images/ejemplos/codeledarduino.png'
+import Dupont from '../../images/dupont.jpeg'
 import Bonus from '../../images/bonus.png'
 import firmata from 'firmata'
 import {Link} from 'react-router-dom'
@@ -74,8 +73,9 @@ class ArduinoLed extends Component{
 <div class="section-heading">
 
     <h3>ENCENDER UN LED</h3>
-    <h2 class="section-title">Aprende a encender LEDs</h2>
-    <p class="section-subtitle">"Hola Mundo" es la primer prueba que hace un programador cuando comienza. Para Arduino, el "Hola Mundo" es la posibilidad de encender un LED. Paso a paso te lo enseñamos.</p>
+    <h2 class="section-title">Aprende a programar un reloj LCD</h2>
+    <p class="section-subtitle">Tu placa Arduino es compatible con muchos accesorios. Los tableros LCD son uno de ellos. Aqui te enseñaremos a 
+    personalizar textos e incluso a personalizar un reloj con tu Arduino y un LCD</p>
                     
     <h3>¿Qué necesito?</h3>
     <br></br><br></br><br></br>
@@ -91,18 +91,18 @@ class ArduinoLed extends Component{
       </li>
 
       <li>
-        <a><img src={Leds}/></a>
+        <a><img src={Lcd}/></a>
           <div class="details">
-            <h3>LEDs sencillos</h3>
-              <p class="image-author"><Link to="/shop">Consíguelos aquí</Link></p>
+            <h3>LCD de 16 x 2</h3>
+              <p class="image-author"><Link to="/shop">Consíguelo aquí</Link></p>
           </div>
       </li>
 
       <li>
-        <a><img src={Dupont}/></a>
+        <a><img src={Potenciometro}/></a>
           <div class="details">
-            <h3>2 Cable Dupont Jumper</h3>
-              <p class="image-author"><Link to="/shop">Consíguelos aquí</Link></p>
+            <h3>Potenciometro 10 K</h3>
+              <p class="image-author"><Link to="/shop">Consíguelo aquí</Link></p>
           </div>
       </li>
 
@@ -111,6 +111,14 @@ class ArduinoLed extends Component{
           <div class="details">
             <h3>Protoboard 400 puntos</h3>
               <p class="image-author"><Link to="/shop">Consíguela aquí</Link></p>
+          </div>
+      </li>
+
+      <li>
+        <a><img src={Dupont}/></a>
+          <div class="details">
+            <h3>Cables Dupont macho/macho</h3>
+              <p class="image-author"><Link to="/shop">Consíguelos aquí</Link></p>
           </div>
       </li>
     </ul>
@@ -127,14 +135,9 @@ class ArduinoLed extends Component{
   <div class="media-content">
     <div class="content">
       <p>
-        <strong>Preparar el entorno Arduino</strong> <small>Conociendo tu placa y el IDE Arduino</small> 
+        <strong>Preparar el entorno</strong> <small>Conectaremos los componentes</small> 
         <br/>
-        Antes que todo, vamos a conocer tu placa y el entorno de programación de Arduino. Para ello, dirigete a <a href="https://www.arduino.cc/"> el sitio
-        oficial de Arduino en la Web</a> para descargar el IDE (Entorno de Desarrollo Integrado) de la placa. En otro artículo enseñamos como utilizar
-        dicho entorno, por lo que en este solo daremos el paso a paso para encender nuestro LED. Una vez descargado el IDE, conectalo por medio del Cable
-        USB a tu computadora y abre el software.
-        Nosotros vamos a conectarnos via Web a nuestro Arduino, por ello, necesitaremos un protocolo llamado Firmata, el cual nos permitirá conectarnos
-        desde nuestras aplicaciones a los microcontroladores de la placa
+        A estas alturas ya estamos más familiarizados con los componentes del Arduino
       </p>
     </div>
   </div>
@@ -177,7 +180,7 @@ class ArduinoLed extends Component{
         Tu placa Arduino tiene 16 pines digitales ennumerados en el borde de la misma. Cada uno de ellos tiene un objetivo particular, sin embargo
         los 16 son capaces de transmitir energía y ciertas órdenes. Para nuestro caso pŕáctico de hoy vamos a utilizar un LED sencillo, el cual deberás
         conectar con la patilla larga en el <strong>PIN GND</strong> y la patilla corta en el <strong>PIN 13</strong>
-         <p><img class="exampleimages" src={LedRojo}/></p>
+         <p><img class="exampleimages" src={Lcd}/></p>
       </p>
     </div>
   </div>
@@ -352,7 +355,7 @@ class ArduinoLed extends Component{
       A continuación crea un archivo nuevo en la misma ubicación donde tenemos toda nuestra instalación y nombralo <strong>index.js</strong> en este archivo
       copia el siguiente código:
 
-      <p><img class="exampleimages" src={codeLed}/></p>
+      <p><img class="exampleimages" src={Dupont}/></p>
 
       Una vez que copiaste el código, regresa a tu terminal, ejecuta <strong>node index.js</strong> para abrir tu archivo y <strong>FELICIDADES!</strong> acabas
       de hacer encender tu primer LED en Arduino con JavaScript.
