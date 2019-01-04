@@ -76,7 +76,7 @@ class Profile extends Component{
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by3">
-              <img src={Pika}/>
+             
             </figure>
           </div>
         </div>
