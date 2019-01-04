@@ -11,7 +11,7 @@ const path         = require('path');
 const cors         = require('cors')
 
 mongoose
-  .connect('mongodb://localhost/back', {useNewUrlParser: true})
+  .connect(process.env.DB, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -60,7 +60,7 @@ app.locals.title = 'Express - Generated with IronGenerator';
 const index = require('./routes/index');
 app.use('/', index);
 const auth = require('./routes/auth');
-app.use('/', auth)
+app.use('/auth', auth)
 
 
 module.exports = app;

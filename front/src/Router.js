@@ -6,6 +6,7 @@ import Arduino from "./components/Arduino/Arduino";
 import ArduinoLed from "./components/Arduino/ArduinoLed"
 import Profile from "./components/Profile/Profile"
 import Shop from "./components/Shop/Shop"
+import Signup from "./components/Login/Signup"
 
 
 const Router = () => (
@@ -16,6 +17,7 @@ const Router = () => (
         <Route exact path="/arduino/arduinoled" component={ArduinoLed} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/shop" component={Shop} />
+        <Route exact path="/signup" component={Signup} />
     </Switch>
 );
 

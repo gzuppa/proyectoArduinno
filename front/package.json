@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "firmata": "^1.0.0",
+    "firmata-party": "^1.5.10",
     "johnny-five": "^1.0.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
