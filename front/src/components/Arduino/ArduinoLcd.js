@@ -15,7 +15,8 @@ import SixIcon from '../../images/numbers/six.png'
 import Dupont from '../../images/dupont.jpeg'
 import Bonus from '../../images/bonus.png'
 import {Link} from 'react-router-dom'
-
+import ArduinoLCDConectar from '../../images/arduinolcdconectar.jpg';
+import codelcd from '../../images/codelcd.png';
 
 
 class ArduinoLed extends Component{
@@ -113,7 +114,55 @@ class ArduinoLed extends Component{
       <p>
         <strong>Preparar el entorno</strong> <small>Conectaremos los componentes</small> 
         <br/>
-        A estas alturas ya estamos más familiarizados con los componentes del Arduino
+        A estas alturas ya estamos más familiarizados con los componentes del Arduino y conocemos la cantidad de pines que tiene y su utilidad. Para el
+        panel LCD no es muy diferente. Cuenta con 16 pines o sockets los cuales controlan cada uno de los caracteres que se muestran en la pantalla. La forma
+        en la que se conectaran los cables de la placa hacia el panel será de la siguiente forma:
+
+        <p><img class="exampleimages" src={ArduinoLCDConectar}/></p>
+        <br/>
+        En la siguiente tabla te mostramos como debe ir la correspondencia de los pines del Arduino hacia los pines del LCD
+        <table class="table is-hoverable">
+  <thead>
+    <tr>
+      <th>VSS</th>
+      <th>VDD</th>
+      <th>VO</th>
+      <th>RS</th>
+      <th>RW</th>
+      <th>E</th>
+      <th>D0</th>
+      <th>D1</th>
+      <th>D2</th>
+      <th>D3</th>
+      <th>D4</th>
+      <th>D5</th>
+      <th>D6</th>
+      <th>D7</th>
+      <th>A</th>
+      <th>K</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>GND</th>
+      <th>5v</th>
+      <th>wiper</th>
+      <th>Pin 7</th>
+      <th>GND</th>
+      <th>Pin 8</th>
+      <th>-</th>
+      <th>-</th>
+      <th>-</th>
+      <th>-</th>
+      <th>Pin 9</th>
+      <th>Pin 10</th>
+      <th>Pin 11</th>
+      <th>Pin 12</th>
+      <th>5V</th>
+      <th>GND</th>
+    </tr>
+  </tbody>
+</table>
       </p>
     </div>
   </div>
@@ -128,7 +177,7 @@ class ArduinoLed extends Component{
   <div class="media-content">
     <div class="content">
       <p>
-        <strong>Configurando el Arduino</strong> <small>Subiendo un sketch con Firmata</small> 
+        <strong>Cargar el sketch</strong> <small>Subiendo un sketch con Firmata</small> 
         <br/>
         Este paso es muy sencillo. Una vez conectada tu pĺaca por USB, abrimos el IDE Arduino y seguimos la siguiente ruta <strong>Archivo / Ejemplos /
          Firmata / StandardFirmata </strong> 
@@ -151,12 +200,54 @@ class ArduinoLed extends Component{
   <div class="media-content">
     <div class="content">
       <p>
-        <strong>Conectando el Arduino</strong> <small>Conociendo los componentes electrónicos y la forma de conectar</small> 
+        <strong>Comenzando con Johnny Five</strong> <small>Johnny Five es nuestro gran aliado en estos tutoriales</small> 
         <br/>
-        Tu placa Arduino tiene 16 pines digitales ennumerados en el borde de la misma. Cada uno de ellos tiene un objetivo particular, sin embargo
-        los 16 son capaces de transmitir energía y ciertas órdenes. Para nuestro caso pŕáctico de hoy vamos a utilizar un LED sencillo, el cual deberás
-        conectar con la patilla larga en el <strong>PIN GND</strong> y la patilla corta en el <strong>PIN 13</strong>
-         <p><img class="exampleimages" src={Lcd}/></p>
+        La primer parte del codigo definirá nuestras variables y llamará el Framework de J5 para que pueda ser utilizado
+
+        <div class="box">
+  <article class="media">
+    <div class="media-left">
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <p>
+        <strong>//Creamos nuestras variables y llamamos a la librería J5</strong><br/>
+        <strong>var five = require("johnny-five"), lcd, board;</strong><br/>
+        <strong>//Configuramos el puerto de nuestra placa</strong><br/>
+        <strong>board = new five.Board(</strong><br/>
+        <strong>port: "/dev/cu.usbmodemfa141"</strong><br/>
+        <strong>});</strong><br/>
+        <strong>board.on("ready", function() </strong><br/>
+        <strong>console.log("Placa lista.");</strong><br/>
+        </p>
+      </div>
+    </div>
+  </article>
+</div>
+<br/>
+
+A continuación vamos a configurar los pines que se utilizarán de acuerdo a la tabla anterior, asi como el numero de columnas y filas de nuestro display, la
+luz de fondo y el controlador
+
+<div class="box">
+  <article class="media">
+    <div class="media-left">
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <p>
+        <strong>lcd = new five.LCD(</strong><br/>
+        <strong>pins: [7, 8, 9, 10, 11, 12],</strong><br/>
+        <strong>rows: 1,</strong><br/>
+        <strong>cols: 16,</strong><br/>
+        <strong>backlight: 13,</strong><br/>
+        <strong>controller: "2004A"</strong><br/>
+        <strong>});</strong><br/>
+        </p>
+      </div>
+    </div>
+  </article>
+</div>
       </p>
     </div>
   </div>
@@ -171,13 +262,22 @@ class ArduinoLed extends Component{
   <div class="media-content">
     <div class="content">
       <p>
-        <strong>Johnny Five!</strong> <small>¿Que es un Framework y para que me servirá?</small> 
+        <strong>Comenzando a escribir</strong> <small>Los primeros caracteres en tu LCD</small> 
         <br/>
-        Un Framework es una herramienta de terceros que te permite realizar integraciones o funciones no nativas en ciertos lenguajes o entornos de
-        programación. Para nuestro caso, el Arduino tiene su propio lenguaje que utilizamos en el IDE, sin embargo, para que podamos programarlo via
-        Web, usaremos además del protocolo Firmata, el Framework <a href="http://johnny-five.io/"><strong>Johnny-Five</strong></a> el cual está escrito en JavaScript.
-        Este Framework nos permitirá una integración más sencilla con nuestras aplicaciones. 
-
+        La función useChar(code/name) te permite precargar en la memoria del display los caracteres que vas a utilizar en el momento de mostrar los mensajes, en este caso vamos a utilizar un corazón que ya viene en la librería de caracteres.
+        <div class="box">
+  <article class="media">
+    <div class="media-left">
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <p>
+        <strong>lcd.useChar("heart");</strong><br/>
+        </p>
+      </div>
+    </div>
+  </article>
+</div>
       </p>
     </div>
   </div>
@@ -192,176 +292,22 @@ class ArduinoLed extends Component{
   <div class="media-content">
     <div class="content">
       <p>
-        <strong>Montando un pequeño servidor</strong> <small>Paso a paso para tener rapidamente un servidor funcional</small> 
+        <strong>La formula mágica!</strong> <small>Aqui viene la función final</small> 
         <br/>
-        Vamos a montar un servidor en nuestro equipo para utilizarlo de manera local. Cabe señalar, que practicaremos en entornos locales pero todo lo
-        que tu realices puede ser publicado en la Web cuando quieras, para ello, dedicaremos algunos otros temas posteriores.
-        <br/>
-        Primero, debemos instalar <a href="https://nodejs.org/es/"><strong>NodeJS</strong></a> descargando de su página oficial. Los pasos para la instalación
-        son muy sencillos. Para <strong>Windows</strong> solamente descomprime el archivo y abre el ejecutable, sigue los pasos y tendrás Node en tu equipo.
-        Si utilizas Linux <strong>abre una terminal</strong> y ejecuta los siguientes comandos:
-         
-        <div class="box">
-          <article class="media">
-            <div class="media-content">
-              <div class="content">
-              <p>      
-          <strong> sudo apt-get update </strong><br/>
-          <strong> sudo apt-get install nodejs </strong>
-              </p>
+        La siguiente función es la que ejecutará nuestra escritura en el LCD
+         </p>
+
+<p><img class="exampleimages" src={codelcd}/></p>
+
+
+
         </div>
         </div>
-           </article>
-        </div>
-
-      Ahora vamos a utilizar <strong>NPM</strong> que es un manejador de paquetes perteneciente a NodeJS el cual nos servirá para instalar y ejecutar las
-      dependencias que necesitemos, para ello, ejecuta los siguientes comandos:
-
-      <div class="box">
-          <article class="media">
-              <div class="content">
-              <p>      
-          <strong> npm install </strong><br/>
-          <strong> npm init </strong>
-              </p>
-        </div>
-           </article>
-        </div>
-
-      Ya que tenemos instalado NPM y NodeJS vamos a instalar las dependencias necesarias para nuestro servidor y empezar a escribir el código. En este caso
-      ocuparemos <strong>Express</strong>, herramienta con la que comunicaremos via Web nuestro código y construiremos nuestra interfaz; <strong>socket.io</strong> que
-      nos permitirá utilizar nuestros comandos en tiempo real y finalmente el fabuloso <strong>Johnny-Five</strong> para traducir a JavaScript las ordenes
-      a nuestro Arduino. Ahora, ejecuta el siguiente comando:
-
-      <div class="box">
-          <article class="media">
-              <div class="content">
-              <p>      
-          <strong> npm i -S express socket.io johnny-five </strong><br/>
-              </p>
-        </div>
-           </article>
-        </div>
-
-      </p>
-    </div>
-  </div>
-</article>
+  </article>
 
 
-<article class="media section-subtitle">
-  <figure class="media-left">
-    <p class="image is-64x64">
-      <img src={SixIcon}/>
-    </p>
-  </figure>
-  <div class="media-content">
-    <div class="content">
-      <p>
-        <strong>Firmata e Index.js</strong> <small>Comencemos con el código!</small> 
-        <br/>
-      Sabemos que necesitamos tanto a Firmata como a Johnny-Five para dar instrucciones a nuestro Arduino. A continuación vamos a instalar las dependencias
-      de Firmata y te enseñaré a leer un archivo <strong>package.json</strong>. Ejecuta la siguiente linea:
 
-      <div class="box">
-          <article class="media">
-              <div class="content">
-              <p>      
-          <strong> npm i -S firmata firmata-party </strong><br/>
-              </p>
-        </div>
-           </article>
-        </div>
-      
-      Una vez instalados vamos a flashear nuestro Arduino para que pueda recibir órdenes en JavaScript. Para ello, abrimos nuestra terminal, dentro de la
-      carpeta donde hemos instalado todo y ejecutando el comando <strong>ls -a</strong> corroboramos que tengamos el archivo <strong>package.json</strong>.
-      Ya que lo hemos visto ejecutamos el siguiente comando:
 
-      <div class="box">
-          <article class="media">
-              <div class="content">
-              <p>      
-          <strong> cat package.json </strong><br/>
-              </p>
-        </div>
-           </article>
-        </div>
-
-      Para que podamos utilizar Firmata-party y flashear nuestra placa, debemos crear un script. Los scripts, son instrucciones automáticas que podemos personalizar
-      y ejecutar en nuestra terminal, de acuerdo a la configuración en nuestro package.json. En tu terminal debes tener lo siguiente despues de haber ejecutado el comando <strong>cat</strong>
-
-        <div class="box">
-          <article class="media">
-              <div class="content">
-              <p>      
-          <strong>
-            "name": "node-arduino-blink",<br/>
-            "version": "1.0.0",<br/>
-            "description": "",<br/>
-             "main": "index.js",<br/>
-    "scripts": <br/>
-    "test": "echo\"Error: no test specified\" && exit 1",<br/>
-  
-  "keywords": [],<br/>
-  "author": "",<br/>
-  "license": "ISC",<br/>
-  "dependencies": <br/>
-    "firmata": "^0.19.1",<br/>
-    "firmata-party": "^1.5.9"
-  </strong><br/>
-              </p>
-            </div>
-           </article>
-        </div> 
-
-      Aqui, vamos a sustituir la linea <strong>"test": "echo\"Error: no test specified\" && exit 1"</strong> por la siguiente <strong>"firmata": "firmata-party uno --debug"</strong>.
-      Asi, puedes regresar a tu terminal y ejecutar tu nuevo script:
-
-      <div class="box">
-          <article class="media">
-              <div class="content">
-              <p>      
-          <strong> npm run firmata </strong><br/>
-              </p>
-        </div>
-           </article>
-        </div>
-
-      Y voilá! Ya has flasheado tu Arduino y se encuentra listo para recibir ordenes JavaScript.<br/>
-      A continuación crea un archivo nuevo en la misma ubicación donde tenemos toda nuestra instalación y nombralo <strong>index.js</strong> en este archivo
-      copia el siguiente código:
-
-      <p><img class="exampleimages" src={Dupont}/></p>
-
-      Una vez que copiaste el código, regresa a tu terminal, ejecuta <strong>node index.js</strong> para abrir tu archivo y <strong>FELICIDADES!</strong> acabas
-      de hacer encender tu primer LED en Arduino con JavaScript.
-
-      </p>
-    </div>
-  </div>
-</article>
-
-<article class="media section-subtitle">
-  <figure class="media-left">
-    <p class="image is-64x64">
-      <img src={Bonus}/>
-    </p>
-  </figure>
-  <div class="media-content">
-    <div class="content">
-      <p>
-        <strong>Controla el LED con un botón</strong> <small>Manejando el blink del LED desde la Web</small> 
-        <br/>
-        Todo lo que aprendimos en esta lección puedes insertarlo en una p[agina Web. Exactamente el mismo procedimiento que realizamos con el montaje del servidor
-        y la codificación está integrado en el siguiente botón. Conecta tu placa Arduino al puerto USB, inserta el LED en los PINs que establecimos, da click en
-        el botón y observarás como funciona.
-
-        <button class="button is-success is-large is-fullwidth is-rounded" onClick={this.handleClick}>ENCIENDETE ARDUINO!</button>
-
-      </p>
-    </div>
-  </div>
-</article>
 
 
 </div>
