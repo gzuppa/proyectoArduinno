@@ -67,15 +67,7 @@ class Nav extends Component{
                             <li>
                                 <Link to="/arduino">Programar Arduino</Link>
                             </li>
-                            <li>
-                                <a href="#gallery">Aprender código</a>
-                            </li>
-                            <li>
-                                <a href="#services">Robots!</a>
-                            </li>
-                            <li>
-                                <a href="#testimonials">Mi Perfil</a>
-                            </li>
+                            
                             <li>
                                 <Link to="/shop">Tienda</Link>
                             </li>

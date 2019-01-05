@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import {Link} from "react-router-dom";
 import Nav from '../Nav/Nav'
-import { Container, Grid, Header } from 'semantic-ui-react'
+import { Container, Grid } from 'semantic-ui-react'
 import Menu from './Menu'
 import ProductList from './ProductList'
 import CartList from './CartList'
